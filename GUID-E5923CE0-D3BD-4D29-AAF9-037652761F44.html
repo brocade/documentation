@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="reference" name="DC.Type" /><meta content="NTP configuration distribution to Access Gateways" name="DC.Title" /><meta content="GUID-FC9F2647-6C29-4B5D-A884-B4EF2623DA68.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-E5923CE0-D3BD-4D29-AAF9-037652761F44" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>NTP configuration distribution to Access Gateways</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-E5923CE0-D3BD-4D29-AAF9-037652761F44" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">NTP configuration distribution to Access Gateways</h1>
+<div class="body refbody"> 
+	 <div class="section" id="GUID-E5923CE0-D3BD-4D29-AAF9-037652761F44__GUID-7A9D04EC-0D0D-4294-B9D2-502B32F15BA8"> 
+		 
+		<p class="p" id="GUID-E5923CE0-D3BD-4D29-AAF9-037652761F44__GUID-42FC40CA-B228-402D-A437-A6243665418C">Any switch running Fabric OS 7.4.0 or later can distribute the NTP server configuration to core Access Gateways (AGs) connected to the fabric. The core AGs must be running Fabric OS 7.4.0 or later to be able to distribute the NTP configuration to other cascaded or edge AGs. However, AGs are not capable of distributing the NTP configuration to other switches in the fabric. 
+		</p>
+ 
+		<p class="p" id="GUID-E5923CE0-D3BD-4D29-AAF9-037652761F44__GUID-827EE3FD-9E1D-4AFF-9DFA-9B7852CE1CE9">In switch mode, the principal or primary FCS switch synchronizes its time with the external NTP server every 64 seconds and sends time updates to other switches in the fabric. The time updates are not sent in-band to AGs. An AG switch must sync with the external NTP server. If the AG is connected to more than one fabric, the latest clock server request received is configured. 
+		</p>
+ 
+		<ul class="ul" id="GUID-E5923CE0-D3BD-4D29-AAF9-037652761F44__GUID-698D0103-7AFE-4A5E-A4B4-8A70DBC19A6A"> 
+		  <li class="li" id="GUID-E5923CE0-D3BD-4D29-AAF9-037652761F44__LI_25F26E7F9F244CDC81DA2955FDE526C3">The 
+			 <span class="keyword cmdname" id="GUID-E5923CE0-D3BD-4D29-AAF9-037652761F44__GUID-79197F58-2C02-4996-AEC3-B483BB1D2B84">tsClockServer</span> command distributes the NTP server configuration to all switches within the fabric and AGs connected to the same fabric. 
+		  </li>
+ 
+		  <li class="li" id="GUID-E5923CE0-D3BD-4D29-AAF9-037652761F44__GUID-30A02B18-FB05-4745-B968-F483A9AA751B">Already distributed NTP server configurations will persist on the AG after firmware downgrade from Fabric OS 7.4.0 to an earlier version. However, the AG will not be capable of distributing any configuration to the edge AGs. 
+		  </li>
+ 
+		</ul>
+ 
+	 </div>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-FC9F2647-6C29-4B5D-A884-B4EF2623DA68.html">Fabric OS features in Access Gateway mode</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

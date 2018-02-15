@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Adding F_Ports to an N_Port" name="DC.Title" /><meta content="port mapping, adding ports, adding F_Ports to N_Ports, ag --mapAdd, ag --mapShow" name="DC.subject" /><meta content="port mapping, adding ports, adding F_Ports to N_Ports, ag --mapAdd, ag --mapShow" name="keywords" /><meta content="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Adding F_Ports to an N_Port</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Adding F_Ports to an N_Port</h1>
+<div class="body taskbody"> 
+	 <div class="section context" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-E3231580-32E4-4226-AE3F-B7F40C7FE175"> 
+		<p class="p" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-25481FD4-3C17-45C1-9B86-89E846DB2464"> You can modify the default port mapping by adding F_Ports to an N_Port. Adding an F_Port to an N_Port routes that traffic to and from the fabric through the specified N_Port. 
+		</p>
+ 
+		<p class="p" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-A6FB33EA-C66D-4096-A73D-F68934A08A4C"> You can assign an F_Port to only one primary N_Port at a time. If the F_Port is already assigned to an N_Port, you must first remove it from the N_Port before you can add it to a different N_Port. 
+		</p>
+ 
+		<p class="p" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-D2A8E338-3E94-403F-8399-00AC76053164"> Use the following steps to add an F_Port to an N_Port. 
+		</p>
+ 
+	 </div>
+ 
+	 <ol class="ol steps" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-83DF434F-BBA7-48F0-A9FE-74BB7701A24C"><li class="li step stepexpand" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-F3CB46AF-3F5F-4473-B35C-ED2D8BD79B82"> 
+		  <span class="ph cmd" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-88FB3D60-8637-4628-842F-1C94EE910AA6"> Connect to the switch and log in using an account with admin permissions. 
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-4B1FF227-35FD-40BE-BB0C-F95562CCF15F"> 
+		  <span class="ph cmd" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-3655DF9A-4F76-4D0D-B4D5-D210051F2D10"> Enter the 
+			 <span class="keyword cmdname" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-619D2C96-DFC2-4536-9E1B-FCE981518B06">ag</span> 
+			 <span class="ph synph" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-2630E1E4-C0EA-4A02-974E-3C845AAD2B2F"><span class="keyword kwd">--mapadd</span> 
+				<span class="ph var" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-0271268E-D0AA-4D36-B8E6-13987702F598">n_portnumber f_port1;f_port2;... 
+				</span></span> command to add the list of F_Ports to the N_Port. 
+		  </span> 
+		    
+			 <p class="p" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-EACA050E-E16C-42EE-AAD9-168A93D9CFE3"> The F_Port list can contain multiple F_Port numbers separated by semicolons. In the following example, F_Ports 6 and 7 are mapped to N_Port 13. 
+			 </p>
+ 
+		   
+		    
+			 <pre class="pre codeblock" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-2B46F102-24AA-4E91-88C0-07D210F3D255">
+switch:admin&gt; ag --mapadd 13 &quot;6;7&quot;
+F-Port to N-Port mapping has been updated successfully</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-14B9A7A0-18AB-4BB7-A6C0-E076B748F05D"> 
+		  <span class="ph cmd" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-FF8FA767-2A9A-4E10-81C4-6114C584863C"> Enter the 
+			 <span class="keyword cmdname" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-1DF8034C-1CBF-4C56-8848-01FAC07DEF83">ag</span> 
+			 <span class="ph synph" id="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D__GUID-26670D78-8FA8-4DFF-9656-1175A4C87E52"><span class="keyword kwd">--mapshow</span></span> command and specify the port number to display the list of mapped F_Ports. Verify that the added F_Ports appear in the list. 
+		  </span> 
+		</li>
+</ol>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680.html">Port mapping</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

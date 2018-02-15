@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Port mapping" name="DC.Title" /><meta content="mapping priority, F_Port, mapping, example, example, mapping example, mapping description" name="DC.subject" /><meta content="mapping priority, F_Port, mapping, example, example, mapping example, mapping description" name="keywords" /><meta content="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9.html" name="DC.Relation" scheme="URI" /><meta content="GUID-E008542B-E1BC-46C4-B5BF-44B64DDDD24C.html" name="DC.Relation" scheme="URI" /><meta content="GUID-6BF7EE05-D8F0-40CC-A9AB-319D6689AEF2.html" name="DC.Relation" scheme="URI" /><meta content="GUID-47F1106E-8627-4961-B4F9-4B9129B70A9D.html" name="DC.Relation" scheme="URI" /><meta content="GUID-075F76E4-9EF8-4077-B0AD-60A2C49E9075.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Port mapping</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Port mapping</h1>
+<div class="body conbody"> 
+	 <p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-72463950-B3C1-4788-9404-4D6162CB0226"> F_Ports must be mapped to N_Ports before the F_Ports can come online. The following figure shows an example in which eight F_Ports are mapped evenly to four N_Ports on a switch in AG mode. The N_Ports connect to the same fabric through different Edge switches. 
+	 </p>
+ 
+	 <div class="fig fignone" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-48F33857-5193-42AE-A0B0-075C661F3E81"> 
+		 
+		<img class="image" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-6D4B8EF3-FAE3-4A1A-B4FA-C9A7E32ABE5F" src="GUID-E016E563-D7C5-4986-B096-02AFA6116453-output_low.png" /> 
+	 <div class="figcap">Figure 5. Port mapping example</div></div>
+ 
+	 <p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-C8CF3C4B-4811-4AD7-9BB1-716F205FE309">The following table describes the port mapping details shown in the example. 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" class="table" frame="hsides" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-953872AE-6120-485B-B56F-FD412006EA62" rules="rows" summary=""><caption><span class="tablecap">Table 6   Description of port mapping </span></caption> 
+		 
+		 
+		 
+		 
+		<thead align="left" class="thead"> 
+		  <tr class="row"> 
+			 <th class="entry" id="d20198e77" valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-679DE5C3-6A50-4D88-9B07-94E72F3D1AA4"> Access Gateway 
+				</p>
+ 
+			 </th>
+ 
+			 <th class="entry" id="d20198e83" valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-DD93A0DC-93B3-4C9F-ADBA-CC0EEDD9421E"> 
+				</p>
+ 
+			 </th>
+ 
+			 <th class="entry" colspan="2" id="d20198e89" valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-B6239609-3F25-4031-80E9-9030C409581F"> Fabric 
+				</p>
+ 
+			 </th>
+ 
+		  </tr>
+ 
+		</thead>
+ 
+		<tbody class="tbody"> 
+		  <tr class="row"> 
+			 <td class="entry" headers="d20198e77 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-071D1536-AE27-45FA-AF40-F5117FDC61F9"> F_Port 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e83 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-B7D5CA95-66D5-4692-B641-664A4A6CF293"> N_Port 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e89 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-E573A1C1-DCC0-4347-B3EA-25EF229629F5"> Edge switch 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e89 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-3B782ACC-0727-4810-B014-234616873F1C"> F_Port 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr class="row"> 
+			 <td class="entry" headers="d20198e77 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-A1B89E4E-C004-4FB8-815F-F2201DB2BF53"> F_1, F_2 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e83 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-8132FBB0-BC37-4EAA-A0F6-1CD11E88905E"> N_1 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e89 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-1DEBF4EF-97B6-45D1-B4ED-7071AA457B41"> Switch_A 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e89 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-B452E3B1-D5D4-484C-9347-2C7C9169EC13"> F_A1 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr class="row"> 
+			 <td class="entry" headers="d20198e77 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-870DE1C2-9B60-4D51-A9C1-4F89D458FAC5"> F_3, F_4 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e83 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-CE2F9BFD-763C-4528-988D-D038781E4CEE"> N_2 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e89 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-4D868E8C-EBF7-48CA-8B44-6C276026AB75"> Switch_A 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e89 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-8F6D4F78-2364-4083-9839-BDCE85420D60"> F_A2 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr class="row"> 
+			 <td class="entry" headers="d20198e77 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-FF5311BC-724C-4956-ACE7-FA3BF6D89934"> F_5, F_6 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e83 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-E932D4EF-B12C-4ECA-8654-D1CFC502E9F7"> N_3 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e89 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-6EFA48E5-A633-43E1-8AD6-CC4CBCA92940"> Switch_B 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e89 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-12B760EF-59C2-4EEC-8BAC-57B3E92B3F6A"> F_B1 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr class="row"> 
+			 <td class="entry" headers="d20198e77 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-AFC0E761-2EE8-4E4B-AFC2-0C33304FEC2E"> F_7, F_8 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e83 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-1AC5C7D8-331F-41C3-AF77-873AEB9F4B90"> N_4 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e89 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-37DDE52E-FAA2-4333-A622-E9F5866286F7"> Switch_B 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d20198e89 " valign="top"> 
+				<p class="p" id="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680__GUID-31AEC41D-62C0-4A8B-BADD-A8770C957542"> F_B2 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+  </div>
+<div class="related-links"><div class="childlinks"><strong>Next Topic:</strong> <span><span class="link childlink"><a href="GUID-E008542B-E1BC-46C4-B5BF-44B64DDDD24C.html">Default port mapping</a><br />
+</span>
+</span>
+</div>
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9.html">Access Gateway mapping</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

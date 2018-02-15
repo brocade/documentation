@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Rejoining Fabric OS switches to a fabric" name="DC.Title" /><meta content="fabric, join, join fabric, configurations, re-joining switch to fabric, zoning, setting, settings, zone, no access, commands, configDownload, disabling switch, switchDisable, merging switch with fabric, defZone --allAccess, saving, cfgSave, enabling switch, switchEnable" name="DC.subject" /><meta content="fabric, join, join fabric, configurations, re-joining switch to fabric, zoning, setting, settings, zone, no access, commands, configDownload, disabling switch, switchDisable, merging switch with fabric, defZone --allAccess, saving, cfgSave, enabling switch, switchEnable" name="keywords" /><meta content="GUID-DBF94BA4-0C15-4F6D-AB06-D77B52B8A23E.html" name="DC.Relation" scheme="URI" /><meta content="GUID-9F2AF37E-00F2-457C-913E-CD919961AA13.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-AE187E59-B645-4944-A4B6-E0938099C406" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Rejoining Fabric OS switches to a fabric</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-AE187E59-B645-4944-A4B6-E0938099C406" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Rejoining Fabric OS switches to a fabric</h1>
+<div class="body taskbody">
+    <div class="section context" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-AD890BCC-898E-4361-B198-D4EAEA8EFF98">
+      <p class="p" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-EB954C74-2F79-48D1-8D95-C43EDCAA28FB">
+When a switch reboots after AG mode is disabled, the Default zone is set to no access. Therefore, the switch does not immediately join the fabric to which it is connected. Use one of the following methods to rejoin a switch to the fabric:</p>
+
+      <ul class="ul" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-604746AA-0573-487D-A8E6-94827117E548">
+        <li class="li" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-3A3744B9-94BD-4B9E-A78A-63B6644534E2">
+If you saved a Fabric OS configuration before enabling AG mode, download the configuration using the <span class="keyword cmdname" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-285BC7EF-CA80-4B44-861C-FBC823C66944">configDownload</span>
+ command. </li>
+
+        <li class="li" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-73292B06-1A3C-4353-854B-DAA308201A55">
+If you want to rejoin the switch to the fabric using the fabric configuration, use the following procedure.</li>
+
+      </ul>
+
+      <p class="p" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-228F6F32-1384-4BF2-9277-EDCFF029705B">
+To rejoin the Fabric OS switch to a fabric, perform the following steps:</p>
+
+    </div>
+
+    <ol class="ol steps" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-A5EA7068-B38B-41ED-976B-BA4584E198FC"><li class="li step stepexpand" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-B326EB41-0DBF-48EC-9CA1-B8139AE0BA38">
+        <span class="ph cmd" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-946545CC-1CB1-4308-955D-8DA5056C6A6E">
+Connect to the switch and log in using an account assigned to the admin role.</span>
+      </li>
+<li class="li step stepexpand" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-668FBBE6-6D35-4527-9CD5-4D4BFA384828">
+        <span class="ph cmd" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-AA239AE5-3B83-48F1-8973-859B8B384A1F">
+Enter the <span class="keyword cmdname" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-093D4AF5-7102-4A0E-BBA1-9B19B836CE1E">switchDisable</span>
+ command to disable the switch.</span>
+      </li>
+<li class="li step stepexpand" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-BA5456EE-3D69-46B3-89FD-FF1D7E33C0F9">
+        <span class="ph cmd" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-BA244152-E81D-469D-B0AA-10208A34AB87">
+Enter the <span class="keyword cmdname" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-D63DCB65-EB82-4336-B9D8-D669E0C6A84B">defZone --allAccess</span>
+ command to allow the switch to merge with the fabric.</span>
+      </li>
+<li class="li step stepexpand" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-8C00F567-A6A1-40DE-A3EF-F5B6099C16C2">
+        <span class="ph cmd" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-4D17B0FE-FF87-4FDE-A33A-64A3CC8EEBE0">
+Enter the <span class="keyword cmdname" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-CA13DEA7-DCC7-4FCC-A821-B54B88DDC73B">cfgSave</span>
+ command to commit the Default zone changes.</span>
+      </li>
+<li class="li step stepexpand" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-983D887D-8466-494E-A955-40C902EC7ACD">
+        <span class="ph cmd" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-0BE06388-753A-46E0-B94E-4D2A7AE8060B">
+Enter the <span class="keyword cmdname" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-8C0D693F-5015-4791-A9D6-2EA9209AD872">switchEnable</span>
+ command to enable the switch and allow it to merge with the fabric. </span>
+         
+          <p class="p" id="GUID-AE187E59-B645-4944-A4B6-E0938099C406__GUID-EA061DF3-CE8A-4274-A450-735247B3F429">
+The switch automatically rejoins the fabric.</p>
+
+        
+      </li>
+</ol>
+
+  </div>
+<div class="related-links"><div class="childlinks"><strong>Next Topic:</strong> <span><span class="link childlink"><a href="GUID-9F2AF37E-00F2-457C-913E-CD919961AA13.html">Reverting to a previous configuration</a><br />
+</span>
+</span>
+</div>
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-DBF94BA4-0C15-4F6D-AB06-D77B52B8A23E.html">SAN Configuration with Access Gateway</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

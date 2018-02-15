@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Enabling the DCC policy on a trunk" name="DC.Title" /><meta content="policies, enabling DCC policy, DCC policy, enabling, adding WWN" name="DC.subject" /><meta content="policies, enabling DCC policy, DCC policy, enabling, adding WWN" name="keywords" /><meta content="GUID-75A995CD-A045-4352-AF87-E66B06D158AA.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Enabling the DCC policy on a trunk</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Enabling the DCC policy on a trunk</h1>
+<div class="body taskbody">
+    <div class="section context" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-716082FF-2A6E-4B49-B65E-D89F5CE78982">
+      <p class="p" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-E087D44F-A350-46E6-BB4C-5363D3ACFBD3">
+After you assign a Trunk Area, the <strong class="ph b" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-4C466063-129B-4168-BFF9-FC0551701AF8">porttrunkarea</strong>
+ command checks whether there are any active Device Connection Control (DCC) policies on the port with the index TA, and then issues a warning to add all the device WWNs to the existing DCC policy with index as TA. All DCC policies that refer to an Index that no longer exist will not be in effect.</p>
+
+      <p class="p" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-A8C6FA3F-9591-4E24-AC71-CCB86367C4DD">
+Use the following steps to enable the DCC policy on a trunk.</p>
+
+    </div>
+
+    <ol class="ol steps" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-729D7F75-B7C2-48D7-8CF0-6609C530822D"><li class="li step stepexpand" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-43999708-A6BA-4362-A756-6752C17DE0BA">
+        <span class="ph cmd" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-E345E0CD-BD1A-4AA2-B960-911780E5ECDD">
+Add the WWN of all the devices to the DCC policy against the TA. </span>
+      </li>
+<li class="li step stepexpand" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-6CACAF6B-DD0C-48F2-89F0-F7B90A611D29">
+        <span class="ph cmd" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-38AE5C28-EB92-4A88-B26E-82A3794404DC">
+Enter the <strong class="ph b" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-4D409F64-F1A8-4FDD-8EDE-4A8BDA2403E4">secpolicyactivate</strong>
+ command to activate the DCC policy. </span>
+         
+          <p class="p" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-B86109F6-0F16-42BB-844E-2ECB27841AFA">
+You must enable the TA before issuing the <strong class="ph b" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-6AE0FA4A-E4B9-4D0C-9D7E-EF89B225809E">secpolicyactivate</strong>
+ command in order for security to enforce the DCC policy on the trunk ports. </p>
+
+        
+      </li>
+<li class="li step stepexpand" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-86DBF7BF-DD48-4A62-9C41-501801C6B07F">
+        <span class="ph cmd" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-42C07769-6207-4B90-974B-92D875A9908D">
+Turn on the trunk ports. </span>
+         
+          <p class="p" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-9A1AFE44-24C6-4F9C-9C79-E804DC019B7C">
+Trunk ports should be turned on after issuing the <strong class="ph b" id="GUID-6C7C93C2-B43A-4754-A5DD-A88F80D3AFBE__GUID-5C042908-DFE8-42D9-B453-C5934609DAFD">secpolicyactivate</strong>
+ command to prevent the ports from becoming disabled in the case where there is a DCC security policy violation.</p>
+
+        
+      </li>
+</ol>
+
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-75A995CD-A045-4352-AF87-E66B06D158AA.html">Configuration management for trunk areas</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

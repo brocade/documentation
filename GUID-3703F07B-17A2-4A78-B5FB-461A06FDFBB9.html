@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Device mapping considerations" name="DC.Title" /><meta content="device mapping, considerations" name="DC.subject" /><meta content="device mapping, considerations" name="keywords" /><meta content="GUID-04BCDFA4-5187-4742-BD80-9372BEAC575B.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-3703F07B-17A2-4A78-B5FB-461A06FDFBB9" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Device mapping considerations</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-3703F07B-17A2-4A78-B5FB-461A06FDFBB9" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Device mapping considerations</h1>
+<div class="body conbody"> 
+	 <p class="p" id="GUID-3703F07B-17A2-4A78-B5FB-461A06FDFBB9__GUID-C6AC0819-FD1E-47DD-9551-07B4B8C63161"> Consider the following points when using device mapping:
+	 </p>
+ 
+	 <ul class="ul" id="GUID-3703F07B-17A2-4A78-B5FB-461A06FDFBB9__GUID-BB6825C9-6119-4900-A049-9DB4AD54CA86"> 
+		<li class="li" id="GUID-3703F07B-17A2-4A78-B5FB-461A06FDFBB9__GUID-A53AD679-3CBA-42EA-9EC3-C4E78FAE50BD"> When the N_Port is disabled, all devices that are mapped to it are disabled. Depending on the effective failover policy, the devices are enabled on other N_Ports.
+		</li>
+ 
+		<li class="li" id="GUID-3703F07B-17A2-4A78-B5FB-461A06FDFBB9__GUID-D1689E0C-5CA6-4366-9EEC-9B62E84DC9EF"> Similar to port mappings, device mappings are affected by changes to underlying F_Ports. In other words, if an F_Port is taken offline, both the physical device and all virtual nodes behind it momentarily go offline.
+		</li>
+ 
+		<li class="li" id="GUID-3703F07B-17A2-4A78-B5FB-461A06FDFBB9__GUID-6B8ECBB9-03BF-4C0B-8DAB-82F33088703A"> When devices are mapped to an N_Port rather than an N_Port group, they cannot be automatically rebalanced to another N_Port if an additional N_Port comes online. 
+		</li>
+ 
+		<li class="li" id="GUID-3703F07B-17A2-4A78-B5FB-461A06FDFBB9__GUID-75C735C6-7159-4CE4-9937-600F98DC0D2E"> In some instances, two NPIV devices logging in to the same F_Port are mapped to two different N_Ports, which in turn are connected to two different fabrics. When this occurs, both NPIV devices can be allocated the same PID by their respective fabrics. Once Access Gateway detects this condition, it will disable that F_Port, and the event will be logged. 
+		</li>
+ 
+	 </ul>
+ 
+	 <div class="note note" id="GUID-3703F07B-17A2-4A78-B5FB-461A06FDFBB9__GUID-601F1579-D880-48DB-BF6E-F444CC8516D0"><div class="notetitle">NOTE</div>  Access Gateway algorithms reduce the chances of PID collisions, but they cannot be totally eliminated. In some cases, you may be able to configure your virtual or physical fabrics to further reduce PID collisions. 
+	 </div>
+ 
+	 <ul class="ul" id="GUID-3703F07B-17A2-4A78-B5FB-461A06FDFBB9__GUID-32C77F2B-0E06-4777-A63D-B86AB440854D"> 
+		<li class="li" id="GUID-3703F07B-17A2-4A78-B5FB-461A06FDFBB9__GUID-C34E9556-3783-417E-B95C-F74072D2CA4B"> Device mapping is not supported when firmware is downgraded to Fabric OS v6.3.x or earlier. You must delete device mappings or disable Device Load Balancing before downgrading . 
+		</li>
+ 
+		<li class="li" id="GUID-3703F07B-17A2-4A78-B5FB-461A06FDFBB9__GUID-AC8900D5-5AEF-4457-B0D6-15BFC081FFF9"> Static and dynamic device mapping are only supported on the edge module in a cascaded Access Gateway device configuration.
+		</li>
+ 
+		<li class="li" id="GUID-3703F07B-17A2-4A78-B5FB-461A06FDFBB9__GUID-316D6CBC-AD30-443E-A8F0-DEB361A2000D"> When mapping devices to a port group, make sure all ports in that group have the same NPIV login limit. If some ports have a lower login limit than the other ports, and there are many logins to the group, some devices can repeatedly attempt to connect to the device with the lower limit, because it has the fewest logins, and fail to connect. 
+		</li>
+ 
+	 </ul>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-04BCDFA4-5187-4742-BD80-9372BEAC575B.html">Considerations for Access Gateway mapping</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

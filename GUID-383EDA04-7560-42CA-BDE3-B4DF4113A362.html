@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Assigning a trunk area" name="DC.Title" /><meta content="trunk area, assign, remove ports, shared area ports, address Identifier" name="DC.subject" /><meta content="trunk area, assign, remove ports, shared area ports, address Identifier" name="keywords" /><meta content="GUID-75A995CD-A045-4352-AF87-E66B06D158AA.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Assigning a trunk area</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Assigning a trunk area</h1>
+<div class="body taskbody"> 
+	 <div class="section context" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-8D02D066-7646-4A4D-843F-3FC87F75B9DE"> 
+		<p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-057D597A-FDFB-4BAB-9B7A-FEA8391B90E4"> You must enable trunking on all ports to be included in a trunk area (TA) before you can create a trunk area. Use the 
+		  <span class="keyword cmdname" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-DE3A52BA-4034-44A3-BDB7-31075FB1D584">portCfgTrunkPort 
+		  </span> or 
+		  <span class="keyword cmdname" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-8019D7C1-AC87-4B1D-BA29-7D994130B5B9">switchCfgTrunk</span> command to enable trunking on a port or on all ports of a switch. 
+		</p>
+ 
+		<p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-D257CD97-AF55-4ACD-9FC9-D17DD49E34CC"> Issue the 
+		  <span class="keyword cmdname" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-DFB9832D-E76B-48E4-88E1-810A4118085D">porttrunkarea</span> command to assign a static TA on a port or port trunk group, to remove a TA from a port or group of ports in a trunk, and to display masterless trunking information. 
+		</p>
+ 
+		<p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-B71FFA9D-D947-4D6E-919A-A0759E7EBF67"> You can remove specified ports from a TA using the 
+		  <span class="keyword cmdname" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-7D9EA436-38A7-4219-B3D8-A792C5141294">porttrunkarea --disable</span> command, however, this command does not unassign a TA if its previously assigned Area_ID is the same address identifier (Area_ID) of the TA unless all the ports in the trunk group are specified to be unassigned. For more information on the 
+		  <span class="keyword cmdname" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-7C4169FB-E5A4-4D62-A5D4-1282D2223935">porttrunkarea</span> command, enter 
+		  <span class="keyword cmdname" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-99462347-D87E-4370-8C80-D8E873A9140F">porttrunkarea --help</span> or refer to the 
+		  <cite class="cite" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-D3476FA8-5D90-4B6F-B977-C8B92CA98897">Fabric OS Command Reference. 
+		  </cite> F_Port trunking will not support shared area ports 16-47 on the Brocade FC8-48 blades. 
+		</p>
+ 
+		
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" class="table" frame="hsides" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-358E6FF4-F746-45C7-A799-251E0CEF759C" rules="rows" summary=""><caption><span class="tablecap">Table 9   Address identifier</span></caption> 
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		   
+		  <thead align="left" class="thead"> 
+			 <tr class="row"> 
+				<th class="entry" id="d4943e132" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-D394104F-E188-48EE-AA77-5C9B454AE032"> 23 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e138" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-33926F75-4B21-45DA-916A-EFA08A8FD305"> 22 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e144" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-70A40AC5-A7DE-4900-928E-DD8DB6DB71CF"> 21 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e150" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-190FAE6B-90B8-403F-B29C-9B2C6002342D"> 20 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e156" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-D6C52E2F-2743-4CF8-99C3-3C829B7702C4"> 19 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e163" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-4F5A58EB-D936-4C88-8B25-4D1183522AC9"> 18 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e169" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-47A7CEC3-5CED-452C-B75F-CCA1CED1EA5F"> 17 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e175" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-A1CEE0E5-20D6-4A04-AD90-699B9287FA04"> 16 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e181" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-5ECEC21E-2ACB-4223-83C2-9F57BAB52B60"> 15 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e187" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-B07FCA97-76B1-4A33-8FEE-0AF4A4AF3D3C"> 14 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e193" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-AEC540E2-5B62-4A81-BCF7-ECEC7AC59185"> 13 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e200" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-4E5B1447-E5C2-4D33-AEF3-F2D269E1573A"> 12 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e206" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-EDD556F4-DE1B-4361-969E-732F11DD9E63"> 11 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e212" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-A8E0689E-688F-413C-B7E4-8EBB365332CA"> 10 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e218" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-953C8053-ACBB-461D-87EA-4719C05172C9"> 9 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e224" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-547B3F91-ACE9-4CA0-A648-E0214FE8A64D"> 8 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e230" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-5E528064-93BD-42B0-9D89-7BE18D78524C"> 7 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e237" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-92366C1F-0B75-47A7-A1EA-C5B9D83593FB"> 6 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e243" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-66FA8C1E-88CD-4C48-9ACF-2551D1208405"> 5 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e249" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-62C11639-BEC2-4F3A-92B7-4A95CBDD8FD3"> 4 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e255" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-A4DE4511-A41C-496D-AC6C-BC5C7FBFBC48"> 3 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e261" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-0019EA76-ED20-410C-8B6E-9FCFB22C9609"> 2 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e267" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-32E0439A-3177-44A3-B356-651D3B503375"> 1 
+				  </p>
+ 
+				</th>
+ 
+				<th class="entry" id="d4943e274" valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-5B57CE42-902B-41ED-BE3A-F1D1BB16014A"> 0 
+				  </p>
+ 
+				</th>
+ 
+			 </tr>
+ 
+		  </thead>
+ 
+		  <tbody class="tbody"> 
+			 <tr class="row"> 
+				<td class="entry" colspan="8" headers="d4943e132 d4943e138 d4943e144 d4943e150 d4943e156 d4943e163 d4943e169 d4943e175 " valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-B6ED5839-7411-4363-8FF4-16C398FC8F39"> 
+					 <strong class="ph b" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-8709ECF2-52CD-4B2E-96BB-A39BF1D87328">Domain ID</strong> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="entry" colspan="8" headers="d4943e181 d4943e187 d4943e193 d4943e200 d4943e206 d4943e212 d4943e218 d4943e224 " valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-E368FEA8-E60E-403E-B930-57519FF4CDD8"> 
+					 <strong class="ph b" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-F076C507-0BFA-4E01-AFB6-C257A78FF225">Area_ID</strong> 
+				  </p>
+ 
+				</td>
+ 
+				<td class="entry" colspan="8" headers="d4943e230 d4943e237 d4943e243 d4943e249 d4943e255 d4943e261 d4943e267 d4943e274 " valign="top"> 
+				  <p class="p" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-2ABF477D-C6BC-4E30-9F2F-285C1CBF2873"> 
+					 <strong class="ph b" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-06C6C0C4-6D4B-4C24-9922-9253D208E3F3">Port ID</strong> 
+				  </p>
+ 
+				</td>
+ 
+			 </tr>
+ 
+		  </tbody>
+ 
+		</table>
+</div>
+ 
+	 </div>
+ 
+	 <ol class="ol steps" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-ED867EBF-F989-4898-B0DC-1B223EABE9F0"><li class="li step stepexpand" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-3BD5EC34-2B62-4B16-8BF0-F5A8DCD7587E"> 
+		  <span class="ph cmd" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-BD7DABDD-B896-43B5-81B6-8582C321280F"> Connect to the switch and log in using an account assigned to the admin role. 
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-67D29DA3-18FD-4B22-8C35-9C59489D56BA"> 
+		  <span class="ph cmd" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-DE98829B-A2B2-491C-85F7-A52D30B5667D"> Disable the ports to be included in the TA. 
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-D1C72807-B1EA-4297-A3B2-1605F42D2683"> 
+		  <span class="ph cmd" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-4011034F-2DB6-4D8F-B72A-63C304D9805A"> Enable a TA for the appropriate ports. The following example enables a TA for ports 13 and 14 on slot 10 with port index of 125. 
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-8789FA44-2275-4BB5-9152-94011DD06390">
+switch:admin&gt; porttrunkarea --enable 10/13-14 -index 125
+</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-2DD45FE5-9739-46AC-9637-138A0F3A21A1"> 
+		  <span class="ph cmd" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-E727BC4F-B1C9-43FC-8D56-A03A359A00C7"> Display the TA port configuration (ports still disabled) using the 
+			 <strong class="ph b" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-9E93BE62-6465-4A0A-81AA-CCF6AB282DCC">porttrunkarea --show enabled</strong> command. 
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-C6CC01BC-BF8D-490D-840F-C2461CC961FB"> 
+		  <span class="ph cmd" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-6FACDCAA-78C0-4354-BE94-958D831DE774"> Enable the ports specified in step 3 using the 
+			 <strong class="ph b" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-AA3E4BD0-FB9E-4F8B-9750-25530AFE686E">portenable</strong> command. 
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-953CB14D-4828-4007-B1CC-CFA1712C9CC7">
+switch:admin&gt; portenable 10/13
+switch:admin&gt; portenable 10/14
+</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-EA176A3B-E660-4BA5-85E9-58B84DB94C20"> 
+		  <span class="ph cmd" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-F500D528-E165-4040-985D-DA5D09F4CC31"> Show the TA port configuration after enabling the ports using the 
+			 <strong class="ph b" id="GUID-383EDA04-7560-42CA-BDE3-B4DF4113A362__GUID-D2B28EBD-4F6E-48C9-A5E3-F13D71D70BFB">porttrunkarea --show enabled</strong> command. The ports that you enabled should appear in the output. 
+		  </span> 
+		</li>
+</ol>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-75A995CD-A045-4352-AF87-E66B06D158AA.html">Configuration management for trunk areas</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

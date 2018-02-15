@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Device authentication support" name="DC.Title" /><meta content="authentication, support, device" name="DC.subject" /><meta content="authentication, support, device" name="keywords" /><meta content="GUID-FC9F2647-6C29-4B5D-A884-B4EF2623DA68.html" name="DC.Relation" scheme="URI" /><meta content="GUID-267C5811-965C-41B5-ACBE-38A9378C487E.html" name="DC.Relation" scheme="URI" /><meta content="GUID-D1730418-C7E8-4ABB-A8AF-A4EDE6A00974.html" name="DC.Relation" scheme="URI" /><meta content="GUID-F056173E-A319-49C3-A2CF-B864C892BC06.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Device authentication support</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Device authentication support</h1>
+<div class="body conbody"> 
+	 <p class="p" id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5__GUID-6319F925-CDB3-4F7C-B1D0-D82053CB89CA">By default, Fabric OS v6.2.0 and later use Diffie-Hellman Challenge Handshake Authentication Protocol (DH-CHAP) or Fibre Channel Authentication Protocol (FCAP) for authentication. These protocols use shared secrets and digital certificates, based on switch WWN and public key infrastructure (PKI) technology, to authenticate switches. 
+	 </p>
+ 
+	 <p class="p" id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5__GUID-52D0F01C-1AA2-4E2F-8328-AC0989EE0CB2">Authentication automatically defaults to FCAP when both devices are configured to accept FCAP authentication. To use FCAP on both devices, PKI certificates must be installed. If a PKI certificate is present on each device, FCAP has precedence over DH-CHAP. 
+	 </p>
+ 
+	 <p class="p" id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5__GUID-CDA1E768-CC4B-4071-BCBE-93C820EC94C8">If ports are configured for in-flight encryption, authentication defaults to DH-CHAP. Both devices must be configured to accept DH-CHAP for authentication. 
+	 </p>
+ 
+	 <p class="p" id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5__GUID-757F3745-5A73-4387-9F04-8E3AD69B99BC">If DH-CHAP or FCAP fail to authenticate, the Access Gateway port is disabled. 
+	 </p>
+ 
+	 <p class="p" id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5__GUID-0EAA1C35-0CA8-4F31-AB41-C491B1383A55"> Authentication policy is supported in the following configurations for Access Gateway devices: 
+	 </p>
+ 
+	 <ul class="ul" id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5__GUID-5B2593DA-7B71-447D-ABAF-E517670A3900"> 
+		<li class="li" id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5__GUID-F07588BF-0313-4B2F-BECA-16018AA2C66A"> Access Gateway device N_Port connected to Brocade fabric switch F_Port. The N_Port enables authentication when authentication is enabled on the connected switch. Enable switch policy on the AG device, and enable device policy on the fabric switch. 
+		</li>
+ 
+		<li class="li" id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5__GUID-F2256800-B62E-4865-BDDF-B4F21D16B73F"> Access Gateway switch F_Port connected to an HBA. The F_Port enables authentication when the connected device sends a login request with authentication enabled. Enable device policy on the AG device. For authentication between an AG device and an HBA, use DH-CHAP. The HBA supports DH-CHAP only. 
+		</li>
+ 
+	 </ul>
+ 
+	 <p class="p" id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5__GUID-9FFCFC24-44AD-46A1-86C9-E6866B757D97"> For details on installing FCAP certificates and creating DH-CHAP secrets on the switch in AG or Native mode, refer to the 
+		<cite class="cite" id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5__GUID-4A3E8131-2C89-433E-A3DD-7D04EC5BDFF2">Fabric OS Administrator’s Guide</cite> or 
+		<cite class="cite" id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5__GUID-6983BC18-EC04-4E31-9723-77C3CBADB59D">Fabric OS Command Reference</cite>. 
+	 </p>
+ 
+	 <p class="p" id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5__GUID-B6C29E31-3807-45AC-8000-DE38D5586619"> For general information on authentication, refer to the authentication policy for fabric elements in the 
+		<cite class="cite" id="GUID-AA111FDD-4074-4A06-B095-4C291F7631B5__GUID-F1263948-92FA-4A13-B884-2C50D794796D">Fabric OS Administrator’s Guide</cite>. 
+	 </p>
+ 
+  </div>
+<div class="related-links"><div class="childlinks"><strong>Next Topic:</strong> <span><span class="link childlink"><a href="GUID-267C5811-965C-41B5-ACBE-38A9378C487E.html">Supported policy modes</a><br />
+</span>
+</span>
+</div>
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-FC9F2647-6C29-4B5D-A884-B4EF2623DA68.html">Fabric OS features in Access Gateway mode</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

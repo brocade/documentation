@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Device mapping to port groups (recommended)" name="DC.Title" /><meta content="device mapping, to port group, device to port groups, ag --wwnmappingcommands, ag --addwwnpgmapping, ag --delwwnpgmapping, ag --wwnmapshow" name="DC.subject" /><meta content="device mapping, to port group, device to port groups, ag --wwnmappingcommands, ag --addwwnpgmapping, ag --delwwnpgmapping, ag --wwnmapshow" name="keywords" /><meta content="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Device mapping to port groups (recommended)</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Device mapping to port groups (recommended)</h1>
+<div class="body taskbody"> 
+	 <div class="section context" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-19A0BD10-C6BB-4093-AC94-E24E8ABF1AA1"> 
+		<p class="p" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-7F4E28A9-90AE-4820-A2C4-FC775E611F66">Device mapping is recommended when a number of devices must connect to the same group of N_Ports. This approach provides the flexibility to move the devices to any available F_Port. Device mapping provides load balancing and connects the device to the least-loaded N_Port in the group when the device comes online. For more information on port groups, refer to 
+		  <a class="xref" href="GUID-6E7193ED-B354-4DD3-A449-1E702B0C5CAC.html">Port Grouping policy</a>. 
+		</p>
+ 
+		<p class="p" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-A1FD0FC4-0455-4CC2-A427-102E403DA278">Use the following steps to map one or more devices to an N_Port group or to remove device mapping from an N_Port group. 
+		</p>
+ 
+	 </div>
+ 
+	 <ol class="ol steps" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-CE15C38B-9FA3-47DC-9CDE-5EDB53BFA820"><li class="li step stepexpand" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-15E33DDC-D151-406E-9D18-2A26559D13B5"> 
+		  <span class="ph cmd" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-6AAB00F0-6D6C-461E-8F88-0F3FA4833A59"> Connect to the switch and log in using an account assigned to the admin role. 
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-C5F3DF9A-E442-4619-9EFF-DF7180EFC71F"> 
+		  <span class="ph cmd" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-EA58B86B-D632-4D50-BE8B-9B2A51461283"> To add one or multiple device WWNs to an N_Port group , enter the 
+			 <span class="keyword cmdname" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-1D384FD6-EB33-45B2-899C-CBB4CF26D11A">ag 
+			 </span> 
+			 <span class="ph synph" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-1497A15D-419F-43BF-9F91-3CA394CB9EE5"><span class="keyword kwd">--addwwnpgmapping</span> 
+				<span class="ph var" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-E42AA856-3FB7-4F76-B722-5D275B35EBC6">Port_Group</span> 
+				<span class="ph var" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-C3BA838B-54F6-4B95-9EA4-2BCD70D2A55C">[WWN];[WWN]</span></span> command. 
+		  </span> 
+		    
+			 <p class="p" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-80182D92-698F-4DC4-93E6-1893FD1317B7"> All the listed device WWNs will use the least-loaded N_Port in the port group when they log in, unless a specific device mapping can be used instead. This command can only map devices currently connecting through NPIV. 
+			 </p>
+ 
+			 <p class="p" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-5F3955AC-DFE2-4E10-A11B-A13FD5FBAEDA"> The following example adds two devices to port group 3. 
+			 </p>
+ 
+		   
+		    
+			 <pre class="pre codeblock" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-EEB19B00-3448-4EE1-8514-62C4769E9827">
+ag --addwwnpgmapping 3 &quot;10:00:00:06:2b:0f:71:0c;10:00:00:05:1e:5e:2c:11&quot;
+</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-53930809-AF5A-42E0-AA5E-7229D6D61843"> 
+		  <span class="ph cmd" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-165E0CCA-73DC-4FEF-852F-3F31F97FDBFD"> To change all currently existing device mappings to a different port group, use the 
+			 <span class="ph synph" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-C2FC10DB-088A-487B-A9A8-DEA54D8B3DD0"><span class="keyword kwd"> --all</span></span> keyword instead of listing all the WWNs. 
+		  </span> 
+		    
+			 <p class="p" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-907E05B2-5BFE-4F6B-A898-05013437778D"> The following example changes all the currently mapped devices to use port group 3 instead of the current port group mappings. 
+			 </p>
+ 
+		   
+		    
+			 <pre class="pre codeblock" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-100CF827-C055-4E97-887B-F215179B968A">
+ag --addwwnpgmapping 3 --all</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-F312FCED-F5F1-4350-BC5F-3EED9A99F2CB"> 
+		  <span class="ph cmd" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-81C082EA-5515-49BE-9372-5256BA4819A6"> To remove one or multiple devices to an N_Port group , enter the 
+			 <span class="keyword cmdname" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-CBB5B3AE-4210-4C99-A2FD-9AE67D22793A">ag</span> 
+			 <span class="ph synph" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-51F88CEC-A311-48DF-8C7C-39E6C2CF2A65"><span class="keyword kwd"> --delwwnpgmapping</span> 
+				<span class="ph var" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-B67BAF7C-935D-48F1-A250-6577626DA079">Port_Group</span> 
+				<span class="ph var" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-C1800C66-599A-43FC-9087-E0BE503534D3">[WWN];[WWN]</span></span> command. 
+		  </span> 
+		    
+			 <p class="p" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-AAEA392E-7236-4888-B65A-14B2FBE77534"> All the listed devices stop using the least-loaded N_Port in the group when they log in. 
+			 </p>
+ 
+			 <p class="p" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-8F7EBDA7-A05E-450A-948F-0F9C882792D0"> The following example removes mapping for two devices from port group 3. 
+			 </p>
+ 
+		   
+		    
+			 <pre class="pre codeblock" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-F358DD5E-0B92-416A-A524-7DE80C87939A">
+ag --delwwnpgmapping 3 &quot;10:00:00:06:2b:0f:71:0c;10:00:00:05:1e:5e:2c:11&quot;
+</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-76A15592-4DFB-4DB0-967C-CE5F8B5EDE0F"> 
+		  <span class="ph cmd" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-2F2C6A4D-0632-49DB-8F66-594F93AC2ED1"> To remove all devices mapped to an N_Port group, enter the command with the 
+			 <span class="ph synph" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-C4736238-6987-447A-BA93-3E28E16C0443"><span class="keyword kwd">--all</span></span> option instead of listing all WWNs. All of the devices will cease automatic use of the least-loaded port in the port group when they log in. The 
+			 <span class="ph synph" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-BDB841DE-AE33-402D-8C41-40F7927D632E"><span class="keyword kwd">--all</span></span> option is a shortcut for specifying all of the devices that are already mapped with the 
+			 <span class="keyword cmdname" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-117E2EA3-7B82-40CD-9334-03569B21F625">ag</span> 
+			 <span class="ph synph" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-010107AA-7F5B-4DC1-89B7-EA139EDEBF09"><span class="keyword kwd">--addwwnpgmapping</span></span> command. 
+		  </span> 
+		    
+			 <p class="p" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-76F2AF4E-DC55-4525-9677-69B2C007D051"> The following example removes all devices mapped to port group 3. 
+			 </p>
+ 
+		   
+		    
+			 <pre class="pre codeblock" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-0FE7DF06-4B11-48EA-A49E-9BDECA078DAD">
+ag --delwwnpgmapping 3 --all</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-FFBCF1D4-58DE-4111-8BD3-56E83E9E775A"> 
+		  <span class="ph cmd" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-D5D0AE10-91C4-472E-BF6A-4AE4D415A5A8"> Use the 
+			 <span class="keyword cmdname" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-24F2261D-DC73-4B06-942C-039513871BC7">ag</span> 
+			 <span class="ph synph" id="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F__GUID-D988ED10-1D91-42A5-BE09-65B051EC7700"><span class="keyword kwd"> --wwnmapshow</span></span> command to display the list of WWNs mapped to port groups and verify that the correct devices have been mapped to the desired port group. 
+		  </span> 
+		</li>
+</ol>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6.html">Device mapping</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

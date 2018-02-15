@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="F_Port Static Mapping" name="DC.Title" /><meta content="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9.html" name="DC.Relation" scheme="URI" /><meta content="GUID-E70E4851-F44F-4169-89E1-F1A5BE4B6B57.html" name="DC.Relation" scheme="URI" /><meta content="GUID-ADCEBF00-0FC1-44E2-B595-523060DBF41F.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>F_Port Static Mapping</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">F_Port Static Mapping</h1>
+<div class="body taskbody"> 
+	 <div class="section context" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-7AD03325-BDF9-4FE6-A0A5-E41C474DD6D7"> 
+		<p class="p" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-B1321875-5A7C-4D0F-9E57-06B5392C49E3"> The F_Port Static Mapping feature adds the 
+		  <span class="ph synph" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-7FD4B764-51ED-4559-BA7E-5F2E1072EFB1"><span class="keyword kwd">staticadd</span></span> and 
+		  <span class="ph synph" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-92E646E2-719F-40A6-8844-D3D5F856ED4C"><span class="keyword kwd">staticdel</span></span> keywords to the 
+		  <span class="keyword cmdname" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-322879F7-4281-4BCB-9DE8-933693609D7D">ag</span> Fabric OS command. These keywords simplify how you change N_Port to F_Port mapping. Using the 
+		  <span class="keyword cmdname" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-680D9F89-9BBB-44A2-8F34-A9952ED8F9F5">ag</span> 
+		  <span class="ph synph" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-39B7818D-33CE-45C7-9B1D-B84C0954FF1A"><span class="keyword kwd">staticadd</span></span> command, any existing mappings are removed and replaced with the new mapping information. The actions of the 
+		  <span class="keyword cmdname" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-8E3368FD-6476-461D-876D-21D7DAAF10EC">ag</span> 
+		  <span class="ph synph" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-8E34C790-F876-476A-AE70-B7486694572C"><span class="keyword kwd">--mapdel</span></span> and 
+		  <span class="keyword cmdname" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-B6124494-4AB5-42FB-87CF-000790EC21B5">ag</span> 
+		  <span class="ph synph" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-C4992FC4-FB01-45E5-89ED-A113D14C0D7B"><span class="keyword kwd">--mapadd</span></span> commands are combined. 
+		</p>
+ 
+		<p class="p" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-7B31A525-C9E8-4980-98BA-148C32916005"> Use the following steps to change F_Port to N_Port mapping. 
+		</p>
+ 
+	 </div>
+ 
+	 <ol class="ol steps" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-A2EA51A5-D573-43E4-91E9-D25470B805DC"><li class="li step stepexpand" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-349DED5B-4147-4532-962D-CCD04F3894CF"> 
+		  <span class="ph cmd" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-828643B4-1EFD-46D3-9630-6F0C850A7FCA"> Connect to the switch and log in using an account with admin permissions. 
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-89542CF7-6455-48F9-825F-D29A6A287DB2"> 
+		  <span class="ph cmd" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-F234F1BD-2DAC-4E48-AF53-5BE33DDEF7CA"> Use the 
+			 <span class="keyword cmdname" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-E7DE26E8-0D20-491E-A62E-883879BEF978">ag</span> 
+			 <span class="ph synph" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-A0334A63-A5D2-4969-BC2E-D25114099686"><span class="keyword kwd">staticadd</span> 
+				<span class="ph var" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-28069075-8034-4355-BD75-11F637777DD4">N_Port F_Port1 [; F_Port2;...]</span></span> command to add or change static port mapping. In the following example, F_Port 1 is added to N_Port 17 and F_Port 1 is removed from any existing N_Port mapping. 
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-A3B59F2E-EDE5-4320-808F-B5D1104FD948">switch:admin&gt; ag --staticadd 17 1</pre>
+ 
+		   
+		    
+			 <p class="p" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-2D17CC1D-47FD-47E5-BFC5-4658746A5171"> When the F_Port static mapping is changed or added, the F_Port and all attached devices log out of the previously mapped N_Port and log in to the new N_Port. 
+			 </p>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__STEP_87D64C41FCF549278EE16BF27080E6E1"> 
+		  <span class="ph cmd" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-2E323B62-3CF0-479C-94E5-2A31BA7ACEEE">Use the 
+			 <span class="keyword cmdname" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-4CA04E28-5869-4623-AB61-89EC2A341CF6">ag</span> 
+			 <span class="ph synph" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-471791BA-F4CE-415F-B94B-8D5653826015"><span class="keyword kwd">staticdel</span> 
+				<span class="ph var" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-5DFC9221-5ED8-4C9E-8058-D38159A6303B">N_Port</span> 
+				<span class="keyword kwd"> &quot;</span> 
+				<span class="ph var" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-D10414B3-B935-4FF6-A61E-59800F5DA531">F_Port1</span> 
+				<span class="ph delim" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-DEAF807C-69F5-4D72-B8A8-92FE557AFDC2">[</span><span class="keyword kwd">;</span> 
+				<span class="ph var" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-AA4F7405-4B1E-44ED-B24C-9BC7A3648F1D">F_Port2</span><span class="keyword kwd">;</span><span class="ph var" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-F96E2A32-682A-4C71-A30F-69DDFEC6334E">...</span><span class="ph delim" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-271F6E54-B5FD-4B98-8CBB-BD440105493A">]</span> 
+				<span class="keyword kwd">&quot;</span> 
+			 </span> command to remove static port mapping. In the following example, F_Ports 3, 4, and 5 are removed from N_Port 17. 
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF__GUID-E9B9915A-C8B9-4B6B-A838-749C1BF317B6">ag --staticdel 17 &quot;3;4;5&quot;</pre>
+ 
+		   
+		</li>
+</ol>
+ 
+  </div>
+<div class="related-links"><div class="childlinks"><strong>Next Topic:</strong> <span><span class="link childlink"><a href="GUID-E70E4851-F44F-4169-89E1-F1A5BE4B6B57.html">Considerations for using F_Port Static Mapping with other AG features and policies</a><br />
+</span>
+</span>
+</div>
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9.html">Access Gateway mapping</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

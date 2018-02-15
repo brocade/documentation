@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Rebalancing F_Ports" name="DC.Title" /><meta content="APC Policy, rebalancing F_Ports" name="DC.subject" /><meta content="APC Policy, rebalancing F_Ports" name="keywords" /><meta content="GUID-74029612-1F12-4988-BDF9-81AF6E226A6C.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-B251D510-7539-49BD-8889-5445780C5455" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Rebalancing F_Ports</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-B251D510-7539-49BD-8889-5445780C5455" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Rebalancing F_Ports </h1>
+<div class="body taskbody"> 
+	 <div class="section context" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-F3170A27-9E08-4480-B63A-883DF47A41D9"> 
+		<p class="p" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-78DC5785-E317-4DBE-8977-2BF577745D33"> To minimize disruption that could occur once F_Ports go offline or when additional N_Ports are brought online, you can modify the default behavior of Automatic Login Balancing mode by disabling or enabling rebalancing of F_Ports when F_Port offline or N_Port online events occur. 
+		</p>
+ 
+	 </div>
+ 
+	 <ol class="ol steps" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-72D3E511-8C9B-4174-BFE6-985DD99411FF"><li class="li step stepexpand" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-ECD0D949-AC30-4B9A-9B96-9FBB35F73CDA"> 
+		  <span class="ph cmd" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-DD008714-FAF3-49E5-80AF-36BCBA59E751"> Connect to the switch and log in using an account assigned to the admin role.
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-7DCBAA4F-04A7-4759-8363-A313FAA1AF96"> 
+		  <span class="ph cmd" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-DD13E190-1FB5-4693-A001-FA34D9515DE6"> Enter the 
+			 <span class="keyword cmdname" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-BCBBB155-F507-466A-9D4E-51D0E5D5EB57">agautomapbalance --enable</span><strong class="ph b" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-17B83EB4-489D-46BE-9A6F-D77749B6EBF1"></strong> command with the appropriate options to enable automatic login redistribution of F_Ports. In the following example, rebalancing of F_Ports in port group 1 in Access Gateway is enabled when an F_Port online event occurs.
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-E7D902FC-09C0-454C-8B89-2F07B620F8E7">
+switch:admin&gt; agautomapbalance --enable -fport -pg 1
+</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-B7B6C68D-A133-4DB6-976B-3F9E8C04D0F8"> 
+		  <span class="ph cmd" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-1AB6A615-5367-4907-990D-F82ADFDF14BB"> Enter the 
+			 <span class="keyword cmdname" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-7EE80612-EEDF-4E2A-A200-D764E0B5191E">agautomapbalance --disable -all 
+			 </span> command with the appropriate options to disable automatic login distribution of N_Ports for all port groups in the Access Gateway when an N_Port online event occurs.
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-039D0E1E-9FE6-46AA-A84D-430B919CC47E">
+switch:admin&gt; agautomapbalance --disable -nport -all
+</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-0E39F595-9012-4FDD-BCC6-1C73ED4B28EE"> 
+		  <span class="ph cmd" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-044DCFF2-EA5C-40C5-BB95-5454581EC8CB"> Enter the 
+			 <span class="keyword cmdname" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-35372B84-EEB7-48CB-91F0-00AAB954D093">agautomapbalance --disable -all 
+			 </span> command with the appropriate options to disable automatic login distribution of F_Ports for all port groups in the Access Gateway when an F_Port online event occurs.
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-9F6B21A4-8B43-4BD4-8AF7-794B50CC38A9">
+switch:admin&gt; agautomapbalance --disable -fport -all
+</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-44EE6815-D492-4EE8-AB1F-F0ECA24C3CAA"> 
+		  <span class="ph cmd" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-271B5D24-0CD7-4213-940A-EE715E4A804F"> Enter the 
+			 <span class="keyword cmdname" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-457B34C9-0764-40A2-AD62-BFDDBEAB5BBC">agautomapbalance --show</span><strong class="ph b" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-7E2EA5D3-FE65-4D07-862D-95C738895801"></strong> command<strong class="ph b" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-197E334F-463D-4F76-85A2-BB2026AAF564"></strong> to display the automatic login redistribution settings for port groups. In the following example, there are two port groups, 0 and 1.
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-B93CE505-FBF3-48CE-8142-1EA78E1A2453">
+switch:admin&gt; agautomapbalance --show
+AG Policy: pg
+--------------------------------------------
+PG_ID LB mode nport fport
+--------------------------------------------
+0 Enabled					Enabled			Disabled
+1 Disabled			 			-			-</pre>
+ 
+		   
+		    
+			 <p class="p" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-8123EA13-0E4F-40E5-8CB8-33A0D0012904"> This command also displays the automatic login redistribution settings for N_Ports and F_Ports. For more details on this command and its output, refer to the 
+				<cite class="cite" id="GUID-B251D510-7539-49BD-8889-5445780C5455__GUID-9CAC2D0A-4D57-49A8-89EA-7E5959806A23">Fabric OS Command Reference</cite>.
+			 </p>
+ 
+		   
+		</li>
+</ol>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-74029612-1F12-4988-BDF9-81AF6E226A6C.html">Creating a port group and enabling Automatic Login Balancing mode</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

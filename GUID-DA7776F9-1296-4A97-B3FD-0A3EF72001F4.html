@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Troubleshooting" name="DC.Title" /><meta content="commands, switchDisable, ag --modeEnable, switchShow, switchMode, portCfgShow, portCfgNpivPort, portCfgNport, ag --failoverShow, ag --failbackShow, ag --modeDisable" name="DC.subject" /><meta content="commands, switchDisable, ag --modeEnable, switchShow, switchMode, portCfgShow, portCfgNpivPort, portCfgNport, ag --failoverShow, ag --failbackShow, ag --modeDisable" name="keywords" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Troubleshooting</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Troubleshooting</h1>
+<div class="body conbody"> 
+	 <p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-94FDE75E-E42B-4A61-BD9F-A81BA14C1139"> The following table provides troubleshooting information for Fabric OS switches in AG mode. 
+	 </p>
+ 
+	 
+<div class="tablenoborder"><table border="1" cellpadding="4" cellspacing="0" class="table" frame="hsides" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-69761830-8C73-4669-A948-05CF86E0490C" rules="rows" summary=""><caption><span class="tablecap">Table 12   Troubleshooting </span></caption> 
+		 
+		 
+		 
+		<thead align="left" class="thead"> 
+		  <tr class="row"> 
+			 <th class="entry" id="d27872e128" valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-AB9C9822-3CDE-48D2-97AE-2BBB93CC24CC"> Problem 
+				</p>
+ 
+			 </th>
+ 
+			 <th class="entry" id="d27872e134" valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-9894C42B-2920-4C59-AE64-1EF0E8147744"> Cause 
+				</p>
+ 
+			 </th>
+ 
+			 <th class="entry" id="d27872e140" valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-8F2C2ECB-3DE6-4D99-9D80-112E44C08AFC"> Solution 
+				</p>
+ 
+			 </th>
+ 
+		  </tr>
+ 
+		</thead>
+ 
+		<tbody class="tbody"> 
+		  <tr class="row"> 
+			 <td class="entry" headers="d27872e128 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-6B32A052-D5A4-440F-B170-381F0D217954"> Switch is not in Access Gateway mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e134 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-20D352A5-253A-4239-98B0-EDCE7890F1B4"> Switch is in Native switch mode 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e140 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-5D3300F4-E0AD-4A57-9578-F049A27FEB33"> Disable switch using the 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-6AA74D56-18E4-41F5-B661-D6A81F7578AB">switchDisable</span> command. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-DC82E351-FF51-446B-8362-CC21EBE38099"> Enable Access Gateway mode using the 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-55BFE729-412B-41C7-B0C7-6A00C67E0377">ag --modeenable</span> command. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-329A704E-F9B3-4277-8A18-688C10D66E3F"> Answer yes when prompted; the switch reboots. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-0735505A-39B6-4370-888F-A47CBB7CB92D"> Log in to the switch. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-EF6361B5-724C-4CF1-9132-6B0727D90AD7"> Display the switch settings using the 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-532667D3-C53F-4D10-BBEE-677D28C2105B">switchShow</span> command. Verify that the field 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-3FBE2C32-01A9-49CE-A023-11161A907981">switchMode</span> displays Access Gateway mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr class="row"> 
+			 <td class="entry" headers="d27872e128 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-1CD3EE5C-10F1-4CAF-907C-697B3E0EC218"> NPIV disabled on Edge switch ports 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e134 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-14E3DEF4-D627-4863-9EF3-5F9CC851805C"> Inadvertently turned off 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e140 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-C6B4537E-4C7D-49A0-A23B-943A1A3ECFF2"> On the Edge switch, enter the 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-04412A15-8450-4700-BCD8-9424247D4D77">portCfgShow</span> command. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-AF807CFD-B48B-48E0-AF7E-9A665DBBC47A"> Verify that NPIV status for the port to which Access Gateway is connected is ON. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-A353528C-5FE9-469E-82B3-358E789787E2"> If the status displays as &quot;--&quot; NPIV is disabled. Enter the 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-B89F420A-8AAC-4065-9230-D1CEBC7C6CDE">portCfgNpivPort 
+				  </span><span class="ph synph" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-65D16FD9-BD67-4589-94A7-EAFE18CA9D9A"><span class="ph var" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-389868D9-3200-4D4E-9CC1-1A242812D49A">port_number</span></span><em class="ph i" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-6C914994-96FF-4328-9904-A4094A96CEE8"></em> command with the 
+				  <span class="ph synph" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-FB041D85-867F-4638-9F70-FF3C4480167E"><span class="keyword kwd">enable</span></span><strong class="ph b" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-745B663B-D4A7-4789-B061-663B47152BED"></strong> option to enable NPIV. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-9E914F3D-5C9B-404D-8233-706EF3A7C5D1"> Repeat this step for each port as required. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr class="row"> 
+			 <td class="entry" headers="d27872e128 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-506B2C2C-F53A-4FEB-B3EF-08CA1964353A"> Need to reconfigure N_Port and F_Ports 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e134 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-4751EB82-AA3A-458D-ABF3-10C0E8E5DDDD"> Default port setting not adequate for customer environment 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e140 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-9C55D22E-4E23-42D4-8EC2-979BEF021AEC"> Enter the 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-C89226D9-473D-4979-BFEC-99E830ED934D">portCfgShow</span> command. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-C3434ED8-E917-48F6-AFAF-3AF5903F810C"> For each port that is to be activated as an N_Port, enter the 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-2BFB00FC-C633-413B-973D-9F6CB5DAFD52">portCfgNport 
+				  </span><span class="ph synph" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-662D9A64-36F6-4E00-9861-7B0B3CE54A25"><span class="ph var" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-6963C201-0834-463A-BD10-48334DCF8F84">port_number</span></span> command with the 
+				  <strong class="ph b" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-9B2F5590-DCE2-4D7B-93A6-6D21EB6FABAE">1 
+				  </strong> option. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-22D8D684-CA08-4FC3-A8D2-FDE674E46642"> All other ports remain as F_Ports. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-6BEB8040-3538-4EA3-8203-160817B766D6"> To reset the port to an F_Port, enter the 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-B20331E0-351B-4FDE-B734-643C2F44D897">portCfgNpivPort 
+				  </span><span class="ph synph" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-62FDD750-3837-489C-9940-3FE73E593CD7"><span class="ph var" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-9CCC7D46-DFC9-4D0B-8BEA-01248BAD498C">port_number</span></span> command with the 
+				  <span class="ph synph" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-85992D21-8E87-4F33-BAD1-A480B6DCB684"><span class="keyword kwd">disable</span></span> option. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr class="row"> 
+			 <td class="entry" headers="d27872e128 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-3D74296E-A3F6-48F2-8279-29B85E6BC432"> LUNs are not visible 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e134 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-4763B572-D88A-4426-A7F2-698630A1BE97"> Zoning on fabric switch is incorrect. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-2E2DFE27-92A5-4435-9893-F7F905055855"> Port mapping on Access Gateway mode switch is incorrect. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-77B38DE4-2764-426C-9E10-738C9F08EE0E"> Cabling not properly connected. 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e140 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-1A90EBA8-D95C-453C-AFBF-795BF225F8C8"> Verify zoning on the Edge switch. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-BA0765F7-2D3F-46F3-96B7-7E4E75DE22F0"> Verify that F_Ports are mapped to an online N_Port. Refer to 
+				  <a class="xref" href="GUID-E008542B-E1BC-46C4-B5BF-44B64DDDD24C.html#GUID-E008542B-E1BC-46C4-B5BF-44B64DDDD24C__GUID-7E082B7B-8C72-4BBF-9020-D2B28D8A594E">Table 8</a>. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-B3C7DE31-2B6E-42E3-8F38-4B522C0BC9EA"> Perform a visual inspection of the cabling; check for issues such as wrong ports, twisted cable, or bent cable. Replace the cable and try again. Ensure the F_Port on AG module is enabled and active. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr class="row"> 
+			 <td class="entry" headers="d27872e128 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-ACBF08DF-1C75-4BD0-A060-F1624483E6D1"> Failover is not working 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e134 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-7F3E9FCF-2CBA-4876-90BF-34EFFEF2232D"> Failover disabled on N_Port. 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e140 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-3342490A-E61A-4C0B-9F7C-8C0DC8AA1A2E"> Verify that the failover and failback policies are enabled, as follows: 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-08719C9E-B15C-42F8-BB23-9AB1E1DCB93E"> Enter the 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-A9146619-B2EC-4C72-AA82-185B77FD1D31">ag --failoverShow</span> command with the 
+				  <span class="ph synph" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-69A40727-4369-4A5E-A959-B2F07AFDC4E9"><span class="ph var" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-8D42D958-85B6-447E-9E1D-82DC0E0CD7F2">port_number</span></span> option. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-3B92259A-1C8C-4668-9709-664D1D912E0A"> Enter the 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-8C04BBEE-B969-4922-A039-7EE13E854403">ag --failbackShow</span> command with the 
+				  <span class="ph synph" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-A72B96F2-C975-48CF-BBA3-839F0C6DAE34"><span class="ph var" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-1712C711-951D-4A22-97C3-421FA5E5DD4A">port_number</span></span> option. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-C199CC90-8269-4A4A-9615-BE14B9FD30BF"> Command returns &quot;Failback (or Failover) on N_Port 
+				  <span class="ph synph" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-ECD9C154-4A19-4022-9EB7-320E881D0FE5"><span class="ph var" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-B18FA480-CE6D-447B-8421-D4BAD5A43FD7">port_number</span></span> is supported.&quot; 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-FD03C294-C7BB-4EA3-90D3-77B1171FF205"> If it returns, &quot;Failback (or Failover) on N_Port 
+				  <span class="ph synph" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-ADE977A2-725B-4384-A765-866C25F977D9"><span class="ph var" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-3DA44050-354E-4CA2-8C41-DBB30ADFB2C0">port_number</span></span> is not supported.&quot; Refer to 
+				  <a class="xref" href="GUID-CC8FC789-E5E6-4E24-AA15-509FE28E2524.html">Adding a preferred secondary N_Port (optional)</a>. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr class="row"> 
+			 <td class="entry" headers="d27872e128 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-1EC2DE6A-B635-4474-8FAE-C922A5F5AC4A"> Access Gateway is mode not wanted 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e134 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-03733B4D-64D1-4EB6-AB92-C54EC80FF65F"> Access Gateway must be disabled. 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e140 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-E15B511D-9667-4A44-B3A7-A41B84ACD8B7"> Disable switch using the 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-78CA4D40-FBEE-4F86-922E-C6DBE8946DF4">switchDisable</span> command. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-B41B2DE6-3BE0-4690-A557-3EA99AF57173"> Disable Access Gateway mode using the 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-572C97CA-EC72-4F73-83E8-C9C87FA7C641">ag --modeDisable</span> command. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-D71B675A-6527-4C2F-A772-BB29DC1691FE"> Answer yes when prompted; the switch reboots. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-72D789F2-ACC0-4895-8645-B3D0D513255D"> Log in to the switch. 
+				</p>
+ 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-952B801D-7D67-4692-99BB-5D952EEE25C6"> Display the switch settings using the 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-BD47B04B-212F-49A9-A5C1-E22A5BD6D81A">switchShow</span> command. Verify that the field 
+				  <span class="keyword cmdname" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-B3503467-161C-4A9F-AAB1-E2F0AD05C4F4">switchMode</span> displays Fabric OS Native mode. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		  <tr class="row"> 
+			 <td class="entry" headers="d27872e128 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-82AD6A93-3ECD-4CF1-B892-FEC6072C1BE0"> &quot;Login Rejected by FC stack&quot; messages on console may be seen during F_Port and N_Port disruptions on Brocade 8470 in AG mode. 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e134 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-E5519B41-C690-4C08-A0E4-65204E05932C"> The CNA host is retrying a login before the switch has finished precessing a previous fabric logout (LOGO) attempt. 
+				</p>
+ 
+			 </td>
+ 
+			 <td class="entry" headers="d27872e140 " valign="top"> 
+				<p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-7DFA3F47-D69B-4409-AA4E-C47B50A86052"> Messages display as designed. After the switch has completed LOGO processing, it will accept another login. 
+				</p>
+ 
+			 </td>
+ 
+		  </tr>
+ 
+		</tbody>
+ 
+	 </table>
+</div>
+ 
+	 <p class="p" id="GUID-DA7776F9-1296-4A97-B3FD-0A3EF72001F4__GUID-932B4ABE-5A6B-4E43-9AC7-4EC9AD52735B"> 
+	 </p>
+ 
+  </div>
+
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

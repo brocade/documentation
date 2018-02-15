@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Per-Port NPIV login limit" name="DC.Title" /><meta content="per port NPIV login limit, NPIV, login limit" name="DC.subject" /><meta content="per port NPIV login limit, NPIV, login limit" name="keywords" /><meta content="GUID-23C95161-C8D4-4147-BCEF-989721400E9B.html" name="DC.Relation" scheme="URI" /><meta content="GUID-F65366B7-3F0D-41BC-8AEB-5EE79FB334F5.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Per-Port NPIV login limit</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Per-Port NPIV login limit</h1>
+<div class="body conbody"> 
+	 <p class="p" id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93__GUID-E164EB9C-1AFC-49A8-BC0E-3E4AE82578A4"> The Per-Port NPIV login limit feature allows you to set a specific maximum NPIV login limit on individual ports. This feature works in both Native and Access Gateway modes. Using this feature, you can use additional tools to design and implement a virtual infrastructure. In Access Gateway mode, this feature allows smaller login limits for F_Ports and larger limits for N_Ports. Note that N_Ports are restricted by the NPIV login limit of the connecting port on the Edge switch. 
+	 </p>
+ 
+	 <p class="p" id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93__GUID-09C6E7AE-F3E0-4B89-B149-B8BF646FB969"> Note the following aspects of this feature: 
+	 </p>
+ 
+	 <ul class="ul" id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93__GUID-DE7AFF44-7CCA-4D59-A3D8-7C409AF8DAE2"> 
+		<li class="li" id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93__GUID-6507916B-BE8D-463C-B8B8-07C3F4F6C9CD"> Upgrading between Fabric OS v6.4.0 and v7.1.0 will retain the NPIV settings.
+		</li>
+ 
+		<li class="li" id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93__GUID-6E1D02F5-C454-4933-805E-2245DB34F68D"> The value that you set is persistent across reboots and firmware upgrades. 
+		</li>
+ 
+		<li class="li" id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93__GUID-904BA1DC-7122-4A85-9405-4BC5DBD3665B"> This feature supports virtual switches, so each port can have a specific NPIV login limit value in each logical switch. 
+		</li>
+ 
+		<li class="li" id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93__GUID-FC314C85-B3C6-4780-81EF-E3E4000BB37E"> The login limit default is 126. This value will be set for a port when the 
+		  <strong class="ph b" id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93__GUID-33856C25-AD2D-45BB-A94F-41CF3B8CCF7B">portCfgDefault</strong> command is used to reset port default values. The F_Port must then be re-mapped to its N_Port after using 
+		  <span class="keyword cmdname" id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93__GUID-948C6647-3264-48B6-980D-DB3503D8D260">portCfgDefault</span>.
+		</li>
+ 
+		<li class="li" id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93__GUID-E27D9D52-16CB-4087-AB79-7E80D3F291F3"> Before changing the login limits, you must disable the port.
+		</li>
+ 
+		<li class="li" id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93__GUID-47F0B3A2-07F1-4ADF-8F91-8B31ED1D3DC1"> This feature only applies to ports enabled for NPIV operation. To enable NPIV functionality for a port, you can use the 
+		  <strong class="ph b" id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93__GUID-2E3E194D-4EBC-4C29-8367-D587D7ACD34E">portCfgNPIVPort --enable</strong> command when the switch is in Fabric OS Native mode. For details, refer to the 
+		  <cite class="cite" id="GUID-5FBC2743-7F6E-4B71-BF5C-39F213AA7A93__GUID-8662A371-A9EC-46C4-89B8-14E565F79EA2">Fabric OS Command Reference</cite>.
+		</li>
+ 
+	 </ul>
+ 
+  </div>
+<div class="related-links"><div class="childlinks"><strong>Next Topic:</strong> <span><span class="link childlink"><a href="GUID-F65366B7-3F0D-41BC-8AEB-5EE79FB334F5.html">Setting the login limit</a><br />
+</span>
+</span>
+</div>
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-23C95161-C8D4-4147-BCEF-989721400E9B.html">Managing Policies and Features in Access Gateway Mode</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

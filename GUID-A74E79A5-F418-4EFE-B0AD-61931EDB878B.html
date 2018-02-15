@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Flow Monitor" name="DC.Title" /><meta content="performance monitoring, Flow Monitor, Flow Monitor, Flow Vision" name="DC.subject" /><meta content="performance monitoring, Flow Monitor, Flow Monitor, Flow Vision" name="keywords" /><meta content="GUID-724F9157-EBB8-4152-8583-CE9E863D2F5C.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Flow Monitor</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Flow Monitor</h1>
+<div class="body conbody"> 
+	 <p class="p" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-8929C6A3-E413-417D-BE1F-DE78B8775574"> Flow Vision is a licensed feature supported on platforms using Fabric OS 7.2 and later. It provides a unified platform to manage traffic-related applications on Fabric OS devices. Storage administrators can use this platform to simulate, monitor, and capture the network’s traffic patterns and to make capacity-planning decisions based on the collected statistical data. 
+	 </p>
+ 
+	 <p class="p" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-14B50B7E-12CC-4C5E-824A-FBAB845C6B57"> To access Flow Vision, the Fabric Vision (FV) license must be installed on the hardware platform. 
+	 </p>
+ 
+	 <p class="p" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-A8603A83-0676-4C54-8D37-7E3B8C67FFFD"> The Flow Monitor component of Flow Vision is supported by Access Gateway. Flow Monitor allows you to monitor the network’s traffic pattern and provides statistics to make capacity planning decisions based on the collected data. Flow Monitor provides a single interface to manage flows and unifies different performance monitoring features such as end-to-end monitors and frame monitors. 
+	 </p>
+ 
+	 <p class="p" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-64EB632E-54AD-4E94-8360-2605673A672E"> Flow Monitor expands on basic performance monitoring by allowing you to monitor any hardware-supported flow parameters and define your own flows using combinations of source and destination devices, source and destination IDs, LUN IDs, CSCTL values, and frame types as parameters. 
+	 </p>
+ 
+	 <p class="p" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-FD53297A-6AD0-4566-AC03-7726AE0D7252"> Following are examples of monitors that you can replicate using Flow Monitor: 
+	 </p>
+ 
+	 <ul class="ul" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-9B2CEC8F-62BF-4900-8EA4-551435463E37"> 
+		<li class="li" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-FE7DBB81-62C7-41C9-8C06-16AFA0DEA6FF"> End to End Monitor - This measures the traffic in terms of word count between a pair of ports (host and target). Use this to view end-to end traffic values on an Access Gateway. 
+		</li>
+ 
+		<li class="li" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-262CA43C-1E4B-4248-8430-683578C748A7"> Frame monitoring - Set up an SCSI monitor so that you can view the 
+		  <strong class="ph b" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-7D8DFDE0-3B7D-4C2B-B710-3E7B2993AE3B">-frametype</strong> frame and byte count for a flow. 
+		</li>
+ 
+		<li class="li" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-0DE45AD0-753E-4F6D-95A4-483E3EAA04B1"> LUN monitoring - This allows you to view the 
+		  <strong class="ph b" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-ED328A41-A193-4F9E-9E30-11CBE2AA6AA6">-frametype</strong> frame and byte count for a specific LUN. 
+		</li>
+ 
+		<li class="li" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-FE6301D9-EB52-469B-B1CE-182DA9433741"> Flow learning monitor - This learns flows going through a specific F_Port in the Access Gateway. 
+		</li>
+ 
+		<li class="li" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-F1E600E0-221D-48FC-838E-1ECEBB6FAAB3"> DST monitor - This provides the legacy support equivalent to a frame monitor. 
+		</li>
+ 
+	 </ul>
+ 
+	 <p class="p" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-5B48AC8A-7D48-4562-94DC-55A87EC989DC"> Access Gateway switches support flow monitors on F_Ports only, and only the ingress port parameter is supported. For more information on using Flow Monitor features for Access Gateway in Flow Vision, refer to the 
+		<cite class="cite" id="GUID-A74E79A5-F418-4EFE-B0AD-61931EDB878B__GUID-08A2F49D-22A7-46F1-AC3B-9C03B6589F06">Flow Vision Administrator&#39;s Guide</cite>. 
+	 </p>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-724F9157-EBB8-4152-8583-CE9E863D2F5C.html">Performance Monitoring</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Disabling device mapping" name="DC.Title" /><meta content="device mapping, disabling, ag --wwnmappingdisablecommands, ag --wwnmappingdisable" name="DC.subject" /><meta content="device mapping, disabling, ag --wwnmappingdisablecommands, ag --wwnmappingdisable" name="keywords" /><meta content="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Disabling device mapping</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Disabling device mapping</h1>
+<div class="body taskbody"> 
+	 <div class="section context" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-F092029E-35F4-41BB-A6E8-0E34C53CACD1"> 
+		<p class="p" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-35F99435-C387-4AAC-8F88-61FD44DB3F34"> Use the following procedures to disable device mapping for all or only specific devices. These procedures are useful when you want to temporarily disable device mapping, and then enable this at a later time without reconfiguring your original mapping. 
+		</p>
+ 
+	 </div>
+ 
+	 <ol class="ol steps" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-1EB2A4C2-9C0E-4D31-8130-4DE015B9F913"><li class="li step stepexpand" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-F9B76D8E-A932-4A13-B976-27B26695BA19"> 
+		  <span class="ph cmd" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-C5A7DA11-DF1D-4EE3-A72B-F71C3A6EA75D"> Connect to the switch and log in using an account assigned to the admin role. 
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-8746A49F-A27D-4DBD-9F96-92A977D74286"> 
+		  <span class="ph cmd" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-65310321-B27A-480D-9180-7FE3A563E6FB">Use the 
+			 <span class="keyword cmdname" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-C0753CCE-D467-4888-8328-14E18314A3E0">ag</span> 
+			 <span class="ph synph" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-ED768369-8D36-4F4F-B48F-477812B0E552"> 
+				<span class="keyword kwd">--wwnmappingdisable</span> 
+				<span class="ph var" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-5AC73E6E-73B6-4709-AC73-FE852EA64349">[WWN]; [WWN]</span></span> command to disable mapping for specific WWNs. The device mappings are ignored for all the listed device WWNs without removing the entry from the WWN mapping database. 
+		  </span> 
+		    
+			 <p class="p" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-A00F3DA7-710C-4D75-87C0-063AE83C577C"> The following example disables device mapping for two WWNs. 
+			 </p>
+ 
+		   
+		    
+			 <pre class="pre codeblock" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-CE0CF348-823C-490A-BD61-F2E22D0C7211">
+switch:admin&gt; ag --wwnmappingdisable &quot;10:00:00:06:2b:0f:71:0c; 10:00:00:05:1e:5e:2c:11&quot;
+</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-D723E1AE-1070-4FDE-8D5A-FCBE53AC7E0E"> 
+		  <span class="ph cmd" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-98E5EDAF-990E-4E36-B515-A5BE1621CE2A"> Enter the 
+			 <span class="keyword cmdname" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-ACDF05AC-502B-4D0F-BEFD-6BABF3119893">ag</span> 
+			 <span class="ph synph" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-57F39339-8018-49B5-8D94-738F065121A9"><span class="keyword kwd">--wwnmappingdisable</span> 
+				<span class="keyword kwd">--all</span> 
+			 </span> command to disable mapping for all available WWNs. The 
+			 <strong class="ph b" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-849FF8BD-98BB-42B9-9241-B4216D932FC8"> --all</strong> option will not affect mappings made in the future. Disabled mappings can be modified without automatically enabling them. 
+		  </span> 
+		   The following example removes device mapping for all available WWNs. 
+			 <pre class="pre codeblock" id="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8__GUID-26B6C508-A5DD-43DD-88B1-20BD806870AD"> switch:admin&gt; ag --wwnmappingdisable --all 
+</pre>
+ 
+		   
+		</li>
+</ol>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6.html">Device mapping</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

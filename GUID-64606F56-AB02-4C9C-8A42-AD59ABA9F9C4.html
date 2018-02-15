@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Setting up trunking" name="DC.Title" /><meta content="F_Port, trunking setup" name="DC.subject" /><meta content="F_Port, trunking setup" name="keywords" /><meta content="GUID-F95A194B-56A1-4C4C-B902-41C32F8A68E0.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Setting up trunking</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Setting up trunking</h1>
+<div class="body taskbody"> 
+	 <div class="section context" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-F0B4F419-BD06-4516-9E99-D600CE2B9371"> 
+		<p class="p" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-5910A75C-AD2B-4C51-B74B-D97C21B23EC8"> Use the following steps to set up trunking.
+		</p>
+ 
+	 </div>
+ 
+	 <ol class="ol steps" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-2BA6A6D3-9217-44A6-BD11-FBCA400D53F9"><li class="li step" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-47CC6B24-D350-437A-868D-87065539F67E"> 
+		  <span class="ph cmd" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-406BFA83-0F9D-41B1-A740-91609B7698F1"> Connect to the switch and log in using an account assigned to the admin role.
+		  </span> 
+		</li>
+<li class="li step" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-4CD22A25-6258-4197-B4C7-5275ADAA927F"> 
+		  <span class="ph cmd" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-7306B136-1C9D-4EE1-842B-DDF41946DC88"> Ensure that both modules (Edge switch and the switch running in AG mode) have the trunking licenses enabled.
+		  </span> 
+		</li>
+<li class="li step" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-5B8B8E81-3639-42CF-987A-2A7CDD6A5C59"> 
+		  <span class="ph cmd" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-435312CB-3544-4D82-981F-C9D17F367745"> Ensure that the ports have trunking enabled by issuing the 
+			 <span class="keyword cmdname" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-05BC6A37-67AA-41F5-A2CE-364D70323816">portcfgshow 
+			 </span> command. If trunking is not enabled, issue the 
+			 <span class="keyword cmdname" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-00C0D72E-28EA-4823-82B7-2E0B12DFF31B">portcfgtrunkport 
+			 </span> 
+			 <span class="ph synph" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-0FAAD216-D503-4E04-A24D-E3753E213CCB"><span class="ph delim" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-1CC27ADF-DA58-4E85-95A2-580D049BD27C">[</span> 
+				<span class="ph var" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-05F2148F-C4B3-4A70-A506-777EF5E61C2C">slot 
+				</span> 
+				<span class="ph delim" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-5FE855C6-5DB3-474B-A28A-F7D05A236B50">/ ]</span> 
+				<span class="ph var" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-ED584D08-3951-4452-8DFB-6A185BABF51F">port</span> 
+				<span class="keyword kwd">, 1</span></span> command. 
+		  </span> 
+		</li>
+<li class="li step" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-68EB7212-3A6D-4655-9DE7-BB2C1A5A0E19"> 
+		  <span class="ph cmd" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-0EF2A9B5-997A-4539-9A45-F141A2A97375"> Ensure that the ports within a trunk have the same speed.
+		  </span> 
+		</li>
+<li class="li step" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-471071C5-D987-4371-838B-4CA49F2691D5"> 
+		  <span class="ph cmd" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-FB8C8721-32D5-49FF-878C-7D7312C6F2DE"> Ensure that the ports within an ASIC trunk group are used to group the ports as part of a trunk on the Edge switch or on an AG.
+		  </span> 
+		</li>
+<li class="li step" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-D71AABF4-094C-4AFE-83C5-03C91FD94EA7"> 
+		  <span class="ph cmd" id="GUID-64606F56-AB02-4C9C-8A42-AD59ABA9F9C4__GUID-C0A8AC7F-6125-4549-9A0C-AB438637B38D"> Ensure that both modules are running the same Fabric OS versions.
+		  </span> 
+		</li>
+</ol>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-F95A194B-56A1-4C4C-B902-41C32F8A68E0.html">Configuring trunking on the Edge switch</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

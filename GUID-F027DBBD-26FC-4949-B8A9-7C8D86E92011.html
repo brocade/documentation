@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Enabling trunking" name="DC.Title" /><meta content="trunking, enabling" name="DC.subject" /><meta content="trunking, enabling" name="keywords" /><meta content="GUID-2773DDA3-62AB-4625-9B97-E08BB1383CE5.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Enabling trunking</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Enabling trunking </h1>
+<div class="body taskbody"> 
+	 <ol class="ol steps" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-CB4A61FB-D7D3-43F5-B7FC-4F9A536CD846"><li class="li step stepexpand" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-1DFD7E72-5596-4C4B-995A-CECB7AEA5BE4"> 
+		  <span class="ph cmd" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-DE431597-D6AB-4704-938B-05D9121F23EC"> Connect to the switch and log in using an account assigned to the admin role.
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-0065683B-039D-4523-8C2D-88641C82F5B4"> 
+		  <span class="ph cmd" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-72B6E287-4B15-4D88-A668-C7CFB03ADEB1"> Disable the desired ports by entering the 
+			 <strong class="ph b" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-6C4985FB-2DBA-499A-9500-7172E5EADCAF">portdisable</strong> 
+			 <em class="ph i" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-DDCF4318-579F-440D-BD64-AFD2EA629EA7"> port 
+			 </em> command for each port to be included in the TA.
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-9929D244-290A-46E5-8BEA-1F160AF571FA"> 
+		  <span class="ph cmd" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-A76A18BF-DF20-4D63-AD6B-16A94DFFF882"> Enter the 
+			 <strong class="ph b" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-5F56CDD1-C96D-46ED-B3F2-D93A05BEDDC5">porttrunkarea--enable 3</strong> command with the appropriate options to form a trunk group for the desired ports. For example, if ports 36-39 were disabled in step 2, then the following example command forms a trunk group for ports 36-39 with index 37. These will be connected to N_Ports on an AG module.
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-9B2B49DF-C316-43FF-9E56-C92BB85BF403">
+switch:admin&gt; porttrunkarea --enable 36-39 -index 37
+Trunk area 37 enabled for ports 36, 37, 38 and 39.</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-3F0AC11C-A2C5-4EC5-8E33-F0987CC7A999"> 
+		  <span class="ph cmd" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-CF7824BE-1E66-4CE5-8E95-B2FB896A798E"> Enter the 
+			 <strong class="ph b" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-07C62CE2-E5AE-4449-86CE-8F6D6BBEC8BA">portenable</strong> 
+			 <em class="ph i" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-457D117D-C9B5-46F0-B7C4-F14BE3B6C0BD"> port</em> command for each port in the TA to re-enable the desired ports, such as ports 36-39.
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-A780EC6B-FB78-43B6-BAA6-1FBAE114DBCB"> 
+		  <span class="ph cmd" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-4FB596F2-0C50-495F-B212-61FAB89F9157"> Enter the 
+			 <strong class="ph b" id="GUID-F027DBBD-26FC-4949-B8A9-7C8D86E92011__GUID-95DA0B9B-55E4-471F-88DB-AE1F4F1F8090">switchshow 
+			 </strong> command to display the switch or port information, including created trunks.
+		  </span> 
+		</li>
+</ol>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-2773DDA3-62AB-4625-9B97-E08BB1383CE5.html">Trunking in Access Gateway mode</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

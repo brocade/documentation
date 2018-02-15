@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Enabling NPIV on a Cisco switch" name="DC.Title" /><meta content="Cisco fabric, enabling NPIV on Cisco switch, NPIV, enabling on Cisco switch" name="DC.subject" /><meta content="Cisco fabric, enabling NPIV on Cisco switch, NPIV, enabling on Cisco switch" name="keywords" /><meta content="GUID-40606D2C-FEC9-4123-91AE-75C3DD555BC7.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Enabling NPIV on a Cisco switch</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Enabling NPIV on a Cisco switch</h1>
+<div class="body taskbody">
+    <ol class="ol steps" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-FE5FEADB-6123-4852-978E-2C167B65EE67"><li class="li step stepexpand" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-0C29A01F-AFC7-423E-A9AA-573C10ECC603">
+        <span class="ph cmd" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-8D93E955-206A-42A0-BFA1-16FC14E534B9">
+Log in as admin on the Cisco MDS switch.</span>
+      </li>
+<li class="li step stepexpand" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-4E972465-B9DF-479E-BBF9-9825E22DD6FE">
+        <span class="ph cmd" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-97214105-E65E-488E-BCC0-72EB290B26B1">
+Enter the <span class="keyword cmdname" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-154311D3-B403-474C-B619-153B3EDF82AC">show version</span>
+ command to determine if you are using the correct SAN operating system version and if NPIV is enabled on the switch.</span>
+      </li>
+<li class="li step stepexpand" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-F2404750-ABA3-45DD-B406-A3402FC668CB">
+        <span class="ph cmd" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-2ED556EC-8741-4B54-B1D1-FD3F4D994D0E">
+Enter the following commands to enable NPIV:</span>
+         
+          <pre class="pre codeblock" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-60AC241D-0B99-4C45-BC96-B533FB548FC7">
+configure terminal
+npiv enable 
+</pre>
+
+        
+      </li>
+<li class="li step stepexpand" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-B5B23722-5DA3-486C-A1F9-7070261B13AA">
+        <span class="ph cmd" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-02982FE6-FDBB-4BFC-8FE8-7A57C781F7F5">
+Press<strong class="ph b" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-2F7979FB-AF71-4406-92CE-1899C5D49A58"> Ctrl-Z </strong>
+to exit.</span>
+      </li>
+<li class="li step stepexpand" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-F77629E0-3DF3-44A4-97E1-5778918B4455">
+        <span class="ph cmd" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-4D3CC53E-9117-4DF1-B78F-F6ACE36A6A83">
+Enter the following commands to save the MDS switch connection:</span>
+         
+          <pre class="pre codeblock" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-3548D548-19A1-4A88-BACD-0992B2A419B6">
+copy 
+run 
+start 
+</pre>
+
+        
+         
+          <p class="p" id="GUID-6C862BB3-64E0-43F8-84C7-1129083AC9AB__GUID-00BF7EB1-F9FD-4961-BB9E-76207989329A">
+Your Cisco switch is now ready to connect to a switch in Access Gateway mode.</p>
+
+        
+      </li>
+</ol>
+
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-40606D2C-FEC9-4123-91AE-75C3DD555BC7.html">Connectivity to Cisco fabrics</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

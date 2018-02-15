@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Enabling and disabling Access Gateway mode" name="DC.Title" /><meta content="commands, ag --modeEnable, ag --modeShow, verifying, ag --mapShow, switchShow, disabling, switchDisable, ag --modeDisable" name="DC.subject" /><meta content="commands, ag --modeEnable, ag --modeShow, verifying, ag --mapShow, switchShow, disabling, switchDisable, ag --modeDisable" name="keywords" /><meta content="GUID-EC138615-8D06-42D5-9644-936E8DB23380.html" name="DC.Relation" scheme="URI" /><meta content="GUID-5E8E92D7-1416-41C5-82E2-F54DF798F485.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Enabling and disabling Access Gateway mode</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Enabling and disabling Access Gateway mode</h1>
+<div class="body taskbody"> 
+	 <div class="section context" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-55A34AB6-C9F0-47E0-B4E8-F12FFB28955E"> 
+		<p class="p" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-4AD1E1CE-4CCB-46A8-A142-F40E197C65A0"> Use the following steps to enable and disable Access Gateway mode. After you enable AG mode, some fabric information is erased, such as the zone and security databases. Enabling AG mode is disruptive because the switch is disabled and rebooted. You can display the port mappings and status of the host connections to the fabric when Access Gateway mode is enabled. For more information on the<span class="keyword cmdname" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-FA876A77-01C2-487B-819E-1B29761044C5"> ag 
+		  </span> commands used in these steps, refer to the<cite class="cite" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-F12CC387-AEE2-412A-AA5C-A53FDDCD2BFF"> Fabric OS Command Reference</cite>. 
+		</p>
+ When you disable AG mode, the switch automatically reboots in Fabric OS Native mode and comes back online using the fabric switch configuration. The AG mode parameters, such as port mapping, and Failover and Failback, are automatically removed.To rejoin the switch to the core fabric, refer to 
+		<a class="xref" href="GUID-AE187E59-B645-4944-A4B6-E0938099C406.html">Rejoining Fabric OS switches to a fabric</a>. 
+	 </div>
+ 
+	 <ol class="ol steps" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-2D2AFE1D-2A44-48C3-A309-63E0F02F1EB5"><li class="li step stepexpand" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-5F80F695-E222-45FA-9EDC-31EFC782B8FA"> 
+		  <span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-B3082AAE-949A-4867-899B-260825387D19"> Connect to the switch and log in using an account with admin permissions. 
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-C9F07293-EB91-4CCF-9A03-F71624055937"> 
+		  <span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-C7409C76-78C0-422D-91D3-17D40A0949EE"> Before enabling or disabling AG mode on a switch, use the 
+			 <span class="keyword cmdname" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-30BC8ABE-AA2D-4187-A6BF-6B3834F5CCD1">configUpload</span> command to save the current configuration file. 
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-908EBF1D-C0CD-4966-B01E-E2CCDC9672C1"> 
+		  <span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-0115051F-23C4-44B2-BACD-B09D5F497AB2"> Ensure that no zoning or Admin Domain (AD) transaction buffers are active. If any transaction buffer is active, enabling AG mode will fail with the error, &quot;Failed to clear Zoning/Admin Domain configuration.&quot; 
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-9047023E-C8EF-4481-BDE9-D5E174A763C3"> 
+		  <span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-1FFE7DB8-8B00-49DE-971F-F77B7B749648"> Verify that the switch is set to Native mode. 
+		  </span> 
+		  <ol class="ol substeps" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-8DD7869F-3BA2-4366-BAB4-5C12E55C4E5B" type="a"> 
+			 <li class="li substep" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-D49F1425-EB40-4531-AF36-660185BE5CDA"> 
+				<span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-6A3A9206-797F-4903-8558-CDAE922B3E13"> Use the 
+				  <span class="keyword cmdname" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-7C3AB607-6A84-465B-BD6B-C57477C2366C">switchShow</span> command to verify the switch mode. 
+				</span> 
+			 </li>
+ 
+			 <li class="li substep" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-28DC0AF2-9FA9-44D5-97B4-CF19CD6E9D2E"> 
+				<span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-38C6A59E-0780-4ACD-AF0A-CC89C55B9877"> If the switch mode is not Native, use the 
+				  <span class="keyword cmdname" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-A09CE0C0-9428-4F6C-A6C6-991FEA407200">ag --modedisable 
+				  </span> command to set the switch to Native mode. 
+				</span> 
+				  
+				  <p class="p" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-55636FF9-621D-4730-A253-0FC926B5FE0A"> For more information on setting switches to Native mode, refer to the 
+					 <cite class="cite" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-EE5A1C71-F821-45DA-8ADE-DAC590C90B67">Fabric OS Administrator’s Guide</cite>. 
+				  </p>
+ 
+				 
+			 </li>
+ 
+		  </ol>
+ 
+		</li>
+<li class="li step stepexpand" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-307AA2A2-2952-4DC0-938C-9EC65DEB5DFE"> 
+		  <span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-AEE533DD-BE01-41A7-AB73-EB0220733272"> Enter the 
+			 <span class="keyword cmdname" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-4D9F5456-1947-4085-A51B-502784D71E24">switchDisable</span> command. 
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-7AEC4475-F435-4DD3-B167-F190A8F56923">
+<samp class="ph codeph" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-1711F1A6-A454-4E58-A7ED-06AEE4BC97E5">switch:admin&gt; switchdisable</samp>
+</pre>
+ 
+		   
+		    
+			 <p class="p" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-7C06C477-2A4F-4D5B-B6A5-0B629284E742"> This command disables all user ports on a switch. All Fibre Channel ports are taken offline. If the switch is part of a fabric, the remaining switches reconfigure. You must disable the switch before making configuration changes. 
+			 </p>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-02F5ECE6-8F78-46B6-9397-E646B41F1538"> 
+		  <span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-2D5B79FC-A69D-48AA-AD67-71D1A50A486F"> Enter the 
+			 <span class="keyword cmdname" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-8987C139-0311-4B43-891F-CE240E0C29A9">ag --modeenable</span> command. 
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-44F38469-54F7-4173-A64C-D74F902AE6AA">
+switch:admin&gt; ag --modeenable
+</pre>
+ 
+		   
+		    
+			 <p class="p" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-AFEEA47A-9D75-4E24-B20E-027591E589CA"> The switch automatically reboots and comes back online in AG mode using a factory default port mapping. For more information on AG mode default port mapping, refer to 
+				<a class="xref" href="GUID-E008542B-E1BC-46C4-B5BF-44B64DDDD24C.html#GUID-E008542B-E1BC-46C4-B5BF-44B64DDDD24C__GUID-7E082B7B-8C72-4BBF-9020-D2B28D8A594E">Table 8</a>. 
+			 </p>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-437D6A8C-C08F-4C23-BC38-1E45B0052251"> 
+		  <span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-4F374310-4B86-44A1-BD09-A6075BD8CE46"> Enter the 
+			 <span class="keyword cmdname" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-545D12C9-F93F-472F-8F93-E6144F1D725E">ag --modeshow</span> command to verify that AG mode is enabled. 
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-533DD9C1-94B4-4D5B-B886-F9421302C3AB">
+switch:admin&gt; ag --modeshow
+Access Gateway mode is enabled.</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-79C365EA-B054-444F-B73D-B2A045C0FEEC"> 
+		  <span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-9C597164-8A17-467E-9869-4148E40122CC"> Use the 
+			 <span class="keyword cmdname" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-109B3439-DA5B-472B-A402-6A1BEBE5C7C7">ag --mapshow</span> command to display all the mapped ports. 
+		  </span> 
+		    
+			 <p class="p" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-D7F63DEC-EB2C-4DF1-A30B-337C41953CDF"> The 
+				<span class="keyword cmdname" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-27C67C77-FE5F-4F0F-9E7A-43515F884C20">ag --mapshow</span> command shows all enabled N_Ports, even if those N_Ports are not connected. 
+			 </p>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-58DCCB4D-87C9-44D6-8F8D-EF1C4E4D88BD"> 
+		  <span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-C97BAC4A-8EAF-4D91-89F3-4FBD17468067"> Use the 
+			 <span class="keyword cmdname" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-45D2A29F-F074-4773-BF96-6377D56A72C3">switchshow</span> command to display the status and port state of all ports. Refer to the 
+			 <cite class="cite" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-67BD8A93-8A26-4E19-91F2-CC87F3BC6DC5">Fabric OS Command Reference 
+			 </cite> for examples of output. For a description of the port state, refer to 
+			 <a class="xref" href="GUID-5E8E92D7-1416-41C5-82E2-F54DF798F485.html#GUID-5E8E92D7-1416-41C5-82E2-F54DF798F485__GUID-18E8C8CF-4CF0-4647-8B5D-94BDD5717F5B">Table 5</a>. 
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-1AC02E6D-2CD0-4D43-A771-ED91AD26E08D"> 
+		  <span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-C9A05C85-7B98-477A-AA3F-0EBF8493F849"> Enter the 
+			 <span class="keyword cmdname" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-608F963D-6FEF-4152-88DF-3DEA4D3353C4">switchdisable</span> command to disable the switch. 
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-D3758698-4FF2-40A5-AFF6-40D9D99A1FC8">
+switch:admin&gt; switchdisable
+</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-CA8D80D3-8365-4E6A-B4F8-8BCD783BD5ED"> 
+		  <span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-88108473-8F9C-4DFE-AD29-1B94FCADC54C"> Enter the 
+			 <span class="keyword cmdname" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-3D7BA504-8F74-4C37-B21A-14ADBBEF9F96">ag</span> 
+			 <span class="ph synph" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-505EE80A-478B-473F-90C3-20DCAED7521C"><span class="keyword kwd">--modedisable</span></span> command to disable AG mode. 
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-3B424A29-A857-44F2-94D1-DAA10E4C7764">
+<samp class="ph codeph" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-9D9047EA-A68A-4962-AF1A-EBCFB56AFE2D">switch:admin&gt; ag --modedisable</samp>
+</pre>
+ 
+		   
+		</li>
+<li class="li step stepexpand" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-A1B1C31E-6039-4B89-8F30-BD77CBEC18B3"> 
+		  <span class="ph cmd" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-428E87BB-CD34-4AC9-9B31-3D40C5B38390"> Enter the 
+			 <span class="keyword cmdname" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-A3D05F75-F2FA-4CF4-8953-ABE2CF90E74F">ag 
+			 </span> 
+			 <span class="ph synph" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-EAF4F410-7FE4-4364-8E37-B10B81979947"><span class="keyword kwd">--modeshow</span></span> command to verify that AG mode is disabled. 
+		  </span> 
+		    
+			 <pre class="pre codeblock" id="GUID-DD0D08ED-83B2-468F-854E-A52A0A6A3162__GUID-BD3E300B-B924-4D30-BA86-C7C71D14A3E2">
+switch:admin&gt; ag --modeshow
+Access Gateway mode is NOT enabled</pre>
+ 
+		   
+		</li>
+</ol>
+ 
+  </div>
+<div class="related-links"><div class="childlinks"><strong>Next Topic:</strong> <span><span class="link childlink"><a href="GUID-5E8E92D7-1416-41C5-82E2-F54DF798F485.html">Port state description</a><br />
+</span>
+</span>
+</div>
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-EC138615-8D06-42D5-9644-936E8DB23380.html">Configuring Ports in Access Gateway Mode</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

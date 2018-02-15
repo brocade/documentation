@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Deleting a preferred secondary N_Port for device mapping (optional)" name="DC.Title" /><meta content="device mapping, removing secondary N_Port, ag --wwnmappingcommands, ag --delwwnfailovermapping, ag --wwnmapping" name="DC.subject" /><meta content="device mapping, removing secondary N_Port, ag --wwnmappingcommands, ag --delwwnfailovermapping, ag --wwnmapping" name="keywords" /><meta content="GUID-23929CD8-1471-4F1E-BC5A-4A7D0D567620.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Deleting a preferred secondary N_Port for device mapping (optional)</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Deleting a preferred secondary N_Port for device mapping (optional)</h1>
+<div class="body taskbody"> 
+	 <div class="section context" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-7694F1D2-D40D-4AC6-A0C2-AC0ED2AD2141"> 
+		<p class="p" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-D699F13F-5A83-44C1-97CF-6915FBA39898"> Use the following steps to remove a secondary N_Port where devices will connect if their first or primary N_Port, if defined, is unavailable. 
+		</p>
+ 
+	 </div>
+ 
+	 <ol class="ol steps" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-88F8F2C4-A2E9-4394-80CA-045F737F5C88"><li class="li step stepexpand" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-BEC32E63-FECA-4422-9213-071D2A3E8C1C"> 
+		  <span class="ph cmd" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-D5A183F9-9483-4049-854A-A5FB3195D92B"> Connect to the switch and log in using an account assigned to the admin role. 
+		  </span> 
+		</li>
+<li class="li step stepexpand" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-2F581AF2-9F1F-4823-A157-5571385DF74D"> 
+		  <span class="ph cmd" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-A4B7C766-9302-4990-95FE-5F5CB238FC30"> To delete an N_Port configured as a failover port for one or multiple devices mapped to a specific N_Port, enter the 
+			 <span class="keyword cmdname" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-FC29AA00-3C99-4790-A1A8-5A417237E375">ag --delwwnfailovermapping 
+			 </span> 
+			 <span class="ph synph" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-B2C4BFED-C956-4502-BCDD-D0BFCF2B58DE"><span class="ph var" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-61EF2BA2-AB26-4CE5-B374-8C907A2665BE"> N_Port 
+				</span></span> command with the 
+			 <em class="ph i" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-2A328604-05B9-4448-8F76-38FE50F87C01">&quot;[WWN];[WWN]&quot;</em> option. All of the listed devices will stop using the N_Port if the first N_Port mapped to the devices is unavailable unless they log in through F_Ports that are mapped to the N_Port. 
+		  </span> 
+		    
+			 <p class="p" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-30615102-3C19-4AA6-882C-BC4DC5D7019F"> The following example removes N_Port 32 as the secondary N_Port for two devices already mapped to a primary N_Port. 
+			 </p>
+ 
+		   
+		    
+			 <pre class="pre codeblock" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-E363BCF3-6F05-45ED-9148-5C2A69D28B42">
+ag --delwwnfailovermapping 32 &quot;10:00:00:06:2b:0f:71:0c;10:00:00:05:1e:5e:2c:11&quot;
+</pre>
+ 
+		   
+		    
+			 <p class="p" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-1EB84551-1D04-4BB9-A7BC-5054070DA2B8"> To remove an N_Port as a failover port for 
+				<em class="ph i" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-B0A8F809-2C75-4270-A8FD-DA7664EB262B">all</em> devices mapped to the N_Port, enter the 
+				<span class="keyword cmdname" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-82BEC84B-28BA-46A8-B5A8-D88B89276FF8">ag --delwwnfailovermapping</span> 
+				<span class="ph synph" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-7D0D72F9-DB0D-4325-AAD3-CC3F461BE84A"><span class="ph var" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-FDF92353-50A6-44E5-9B3D-FABB5FF24F2F"> N_Port 
+				  </span></span> command with the 
+				<span class="ph synph" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-D0A53479-5FAD-43E8-8F6A-CCEE2C557DF2"><span class="keyword kwd">--all</span></span> option. 
+			 </p>
+ 
+			 <p class="p" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-D9BE0672-78CA-4556-BCDC-891FA5D91B80"> The following command removes N_Port 32 as the secondary N_Port for all available devices. 
+			 </p>
+ 
+		   
+		    
+			 <pre class="pre codeblock" id="GUID-5F9073F0-F4C5-46A0-B420-67659C2E91A6__GUID-AB6CF459-FDD9-4553-A734-AF24D9952103">
+ag --delwwnfailovermapping 32 --all</pre>
+ 
+		   
+		</li>
+</ol>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-23929CD8-1471-4F1E-BC5A-4A7D0D567620.html">Failover with device mapping </a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

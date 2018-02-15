@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="task" name="DC.Type" /><meta content="Deleting F_Ports from a preferred secondary N_Port" name="DC.Title" /><meta content="port mapping, deleting secondary N_Port" name="DC.subject" /><meta content="port mapping, deleting secondary N_Port" name="keywords" /><meta content="GUID-5C0EF90F-A1C3-410D-A15F-20344DD643B8.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-CF594C15-F495-4840-A32E-D511AB3DB322" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Deleting F_Ports from a preferred secondary N_Port</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-CF594C15-F495-4840-A32E-D511AB3DB322" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Deleting F_Ports from a preferred secondary N_Port</h1>
+<div class="body taskbody">
+    <ol class="ol steps" id="GUID-CF594C15-F495-4840-A32E-D511AB3DB322__GUID-1C716577-0039-4E85-9DC4-2A400ECCD8F6"><li class="li step stepexpand" id="GUID-CF594C15-F495-4840-A32E-D511AB3DB322__GUID-D6CE7AFC-FE92-4804-AEB0-472806F64213">
+        <span class="ph cmd" id="GUID-CF594C15-F495-4840-A32E-D511AB3DB322__GUID-C567FC81-FCA1-4FD3-9384-C12877D56CC3">
+Connect to the switch and log in using an account assigned to the admin role.</span>
+      </li>
+<li class="li step stepexpand" id="GUID-CF594C15-F495-4840-A32E-D511AB3DB322__GUID-F695E6DA-69FE-4053-8679-6B80966B8BD8">
+        <span class="ph cmd" id="GUID-CF594C15-F495-4840-A32E-D511AB3DB322__GUID-2FCA3960-8A46-4AF4-87EF-02EB0EDFD92E">
+Enter the <span class="keyword cmdname" id="GUID-CF594C15-F495-4840-A32E-D511AB3DB322__GUID-2445038D-1742-4319-82AF-D457172C2440">ag --prefdel</span>
+ command with the <em class="ph i" id="GUID-CF594C15-F495-4840-A32E-D511AB3DB322__GUID-C2352918-9077-4817-92D4-71C91D12E6DA">&quot;F_Port1</em>
+;<em class="ph i" id="GUID-CF594C15-F495-4840-A32E-D511AB3DB322__GUID-DBB0E8C6-B441-448F-B59C-B6A0429B2D90">F_Port2</em>
+;<em class="ph i" id="GUID-CF594C15-F495-4840-A32E-D511AB3DB322__GUID-D86FC222-4042-411E-8EEB-8DAC33135745">...</em>
+&quot; <em class="ph i" id="GUID-CF594C15-F495-4840-A32E-D511AB3DB322__GUID-CAB42137-9D39-4744-8038-216F1117BF9E">N_Port</em>
+ options to delete F_Ports from an N_Port.</span>
+         
+          <p class="p" id="GUID-CF594C15-F495-4840-A32E-D511AB3DB322__GUID-15391335-B60A-48FD-ADB7-BD2E91255908">
+The list of F_Ports must be enclosed in quotation marks. Port numbers must be separated by a semicolon. In the following example, F_Ports 3 and 9 are deleted from preferred secondary N_Port 4.</p>
+
+        
+         
+          <pre class="pre codeblock" id="GUID-CF594C15-F495-4840-A32E-D511AB3DB322__GUID-BE5C944F-7A17-4101-915B-B13C61B83522">
+switch:admin&gt; ag --prefdel  &quot;3;9&quot; 4
+Preferred N_Port is deleted successfully for the F_Port[s]</pre>
+
+        
+      </li>
+</ol>
+
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-5C0EF90F-A1C3-410D-A15F-20344DD643B8.html">Failover with port mapping</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

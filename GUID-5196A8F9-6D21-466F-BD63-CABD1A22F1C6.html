@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Device mapping" name="DC.Title" /><meta content="device mapping, feature overview" name="DC.subject" /><meta content="device mapping, feature overview" name="keywords" /><meta content="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9.html" name="DC.Relation" scheme="URI" /><meta content="GUID-24D1B4D6-F24F-4C97-B3FB-6099B64F7868.html" name="DC.Relation" scheme="URI" /><meta content="GUID-078FDD56-FB4C-4F4C-9197-F730C05FCA9F.html" name="DC.Relation" scheme="URI" /><meta content="GUID-A7033070-768C-4E38-A604-C80A74FDB597.html" name="DC.Relation" scheme="URI" /><meta content="GUID-718ED038-45C2-490F-87DA-6302B5E6E7C8.html" name="DC.Relation" scheme="URI" /><meta content="GUID-6116DFC7-5FE9-4238-9764-5CFE6EEC9141.html" name="DC.Relation" scheme="URI" /><meta content="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A.html" name="DC.Relation" scheme="URI" /><meta content="GUID-D3E5107A-9D6E-4303-A8E9-69CED382EE23.html" name="DC.Relation" scheme="URI" /><meta content="GUID-EC47A4ED-290D-4482-A083-4FF6AFD0158C.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Device mapping</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Device mapping</h1>
+<div class="body conbody"> 
+	 <p class="p" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-34764DBC-A24B-4226-A6C0-E1FBDA149C0B"> Device mapping allows you to map individual N_Port ID Virtualization (NPIV) devices to N_Ports. By mapping device WWNs directly to an N_Port group, traffic from the device will always go to the same N_Port group, independently of the F_Port where the device logs in. When the Port Grouping and Device Load Balancing policies are enabled for a port group, WWNs mapped to that port group are automatically balanced among the online N_Ports in that group (refer to 
+		<a class="xref" href="GUID-BB85F5EB-13A2-4658-8639-4010A03454DB.html">Port Grouping policy modes</a>). 
+	 </p>
+ 
+	 <div class="note note" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-8BDA19B2-6834-434A-87B3-A64675E7F7E9"><div class="notetitle">NOTE</div>  Port Grouping policy is not supported when both Automatic Login Balancing and Device Load Balancing are enabled. 
+	 </div>
+ 
+	 <p class="p" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-287558B2-0469-4B3E-8684-5A512D381A11"> Device mapping does not affect or replace the traditional port mapping. Device mapping is optional and is in addition to the existing port mapping. In general, it is recommended that you map devices to N_Port groups rather than map devices to individual N_Ports within a port group. Group mapping ensures maximum device up-time during failover conditions and system power up. Connections occur more quickly when a large number of devices must connect to the same fabric through a single port group. 
+	 </p>
+ 
+	 <p class="p" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-DEFC70CD-A824-4731-A962-FA826D2E1825"> The following aspects of device mapping are important to note: 
+	 </p>
+ 
+	 <ul class="ul" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-F29049F4-3F1F-4D4D-B2D2-998AACFFEC23"> 
+		<li class="li" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-53BE6F8E-7968-4B6C-B02F-840B1614B424">Device mapping has priority over port mapping. That is, logins from a device mapped to a specific N_Port group or N_Port always have priority over unmapped devices that log in to an F_Port that has been mapped to the same N_Port group or N_Port. 
+		</li>
+ 
+		<li class="li" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-1FE23558-8FD0-4F46-BC9D-85434DAFFD94"> Current device routing (dynamic mapping) may turn out different than your intended mapping (static mapping), depending on which N_Ports are online and which policies are enabled, for example, Automatic Port Configuration, Device Load Balancing, Failover, or Failback. Therefore, it is recommended to map devices to N_Port groups instead of specific N_Ports within a port group when using device mapping. 
+		</li>
+ 
+	 </ul>
+ 
+	 <div class="note note" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-79E9A3A6-3848-48B5-A9EC-E028747A71DA"><div class="notetitle">NOTE</div>  Automatic Port Configuration and Device Load Balancing cannot be enabled at the same time. 
+	 </div>
+ 
+	 <p class="p" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-E567C457-60D7-41B6-A820-609DB487AFA1"> The following figure illustrates an example of device mapping to port groups. In the example, WWNs 1, 2, and 3 can connect to any N_Port in Port Group 1 (PG1), while WWNs 4 and 5 can connect with any N_Port in Port Group 2 (PG2). 
+	 </p>
+ 
+	 <div class="fig fignone" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-BB3FB7C0-1CA2-4FF7-866E-DE97F16FB29C"> 
+		<img class="image" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-64B7D700-3CAB-4F04-A8EF-6DCB8211CD76" src="GUID-66B8A33E-5817-467A-8956-98C2369E9332-output_low.png" /> 
+	 <div class="figcap">Figure 6.  Example of device mapping to N_Port groups </div></div>
+ 
+	 <p class="p" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-774973E1-A949-46AC-B8F5-D1E6BBB9D4B3"> The following figure shows an example of device mapping to specific N_Ports. Note that you can map one or multiple WWNs to one N_Port to allow multiple devices to log in through one N_Port. 
+	 </p>
+ 
+	 <div class="fig fignone" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-A09F46BD-7B05-434A-BCE2-D6AE73CA72B2"> 
+		 
+		<img class="image" id="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6__GUID-074774A3-51E4-4649-84EB-B659021F72EA" src="GUID-A40087C3-9A06-4F78-968C-22556C8F71E2-output_low.png" /> 
+	 <div class="figcap">Figure 7. Example device mapping to an N_Port</div></div>
+ 
+  </div>
+<div class="related-links"><div class="childlinks"><strong>Next Topic:</strong> <span><span class="link childlink"><a href="GUID-24D1B4D6-F24F-4C97-B3FB-6099B64F7868.html">Static versus dynamic mapping</a><br />
+</span>
+</span>
+</div>
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9.html">Access Gateway mapping</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

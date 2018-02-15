@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Duplicate PWWN handling during device login" name="DC.Title" /><meta content="PWWN, duplicate handling during login, duplicate PWWWN handling during login" name="DC.subject" /><meta content="PWWN, duplicate handling during login, duplicate PWWWN handling during login" name="keywords" /><meta content="GUID-23C95161-C8D4-4147-BCEF-989721400E9B.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Duplicate PWWN handling during device login</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Duplicate PWWN handling during device login</h1>
+<div class="body conbody"> 
+	 <p class="p" id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E__GUID-A046804B-7637-4BC1-92A0-8C0EC11F8B32"> Handling of logins from two devices using the same PWWN follows standards for all Fabric OS switches. Having two devices with the same PWWN logged into the fabric at the same time may not be desirable as there have been cases when ports coming online get stuck in G_Port state in the AG switch. You can configure three policies:
+	 </p>
+ 
+	 <ul class="ul" id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E__GUID-98943CEC-3A23-4A84-92CD-134C4D29D13E"> 
+		<li class="li" id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E__GUID-C2B99525-1E84-435A-A720-F56D5EF6FAC6"> Default - The Access Gateway switch will not accept a second login request from a PWWN when a device with the same PWWN has already logged into the fabric. The second request with similar PWWN will be rejected and the port will be persistently disabled with reason as &quot;Duplicate Port WWN detected.&quot;
+		</li>
+ 
+		<li class="li" id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E__GUID-A9582A37-6579-4287-99AC-4BDF8AEE9C9A"> Enforced login - The second login request will have precedence over the existing login and Access Gateway will accepts the login. 
+		</li>
+ 
+		<li class="li" id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E__GUID-A9BA55DB-C1FA-4C25-A832-4298FE395EEB"> Mixed - This option takes port type into consideration. The second login request will have precedence over the existing login in case of a duplicate entry exit on the F_Port with an NPIV device logged in. The first login takes precedence over the second login request in case of a duplicate entry exit on the F_Port without any NPIV device logged in.
+		</li>
+ 
+	 </ul>
+ 
+	 <p class="p" id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E__GUID-CE22FD61-F58D-4DDF-82DD-EAC03436D042"> You can configure different handling of duplicate PWWNs other than the default operation using the 
+		<strong class="ph b" id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E__GUID-BCB84FF1-1596-4465-8FA1-188A2A48A473">configure</strong> command through the F_Port login parameters. For more information on configuration and handling of duplicate PWWNs during device login, refer to the &quot;Duplicate PWWN handling during device login&quot; section in the 
+		<cite class="cite" id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E__GUID-0824F302-1371-4115-B6DA-4F9E6694EF59">Fabric OS Administrator’s Guide</cite>.
+	 </p>
+ 
+	 <p class="p" id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E__GUID-2D6DA77E-BF5D-4661-B092-A4E7683E1E11"> This feature is supported in the following configurations:
+	 </p>
+ 
+	 <ul class="ul" id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E__GUID-79EBA395-BF8B-4F2A-9FE5-2CCBCF9EAF73"> 
+		<li class="li" id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E__GUID-DECF8F7C-352E-4B6B-9CEE-FE36243F0692"> AG switch connected to AG switch in cascaded configuration.
+		</li>
+ 
+		<li class="li" id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E__GUID-8B597D7D-6F1E-4625-AC88-A38614FB1359"> AG switch connected to Brocade fabric switch.
+		</li>
+ 
+		<li class="li" id="GUID-2893409A-8784-4FFF-85DB-96BBFE9FC96E__GUID-7F291CDC-9C99-492F-B496-C46AE22A884C"> AG switch connected to a Brocade Host Bus Adapter (HBA).
+		</li>
+ 
+	 </ul>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-23C95161-C8D4-4147-BCEF-989721400E9B.html">Managing Policies and Features in Access Gateway Mode</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

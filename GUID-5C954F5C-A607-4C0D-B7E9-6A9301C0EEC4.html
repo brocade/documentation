@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Access Gateway cascading considerations" name="DC.Title" /><meta content="GUID-09140E3F-EE2F-4608-A5FC-559288E6220E.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Access Gateway cascading considerations</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Access Gateway cascading considerations</h1>
+<div class="body conbody"> 
+	 <p class="p" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-BEB43383-DE11-4860-AD64-9BC5D48BD7F0"> Note the following configuration considerations when cascading Access Gateways: 
+	 </p>
+ 
+	 <ul class="ul" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-0BCB34DD-4427-42EA-B27B-387C4C428A16"> 
+		<li class="li" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-F7A78844-400D-42A2-87DC-123C78DEF0D3"> Only one level of cascading is supported. Note that several Edge AGs can connect into a single Core AG to support an even higher consolidation ratio. 
+		</li>
+ 
+		<li class="li" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-FCF576BA-48F3-47F1-A148-E6B7A1E355CF"> AG trunking between the Edge and Core AG switches is not supported. Trunking between the Core AG switch and the fabric is supported. 
+		</li>
+ 
+		<li class="li" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-5057F17F-6945-40B2-99EB-4318221C0A24"> It is recommended that you enable Advanced Device Security (ADS) policy on all AG F_Ports that are directly connected to devices. 
+		</li>
+ 
+		<li class="li" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-E880F02A-6E2E-49CF-AD6A-0761489DB653"> APC policy is not supported when cascading. 
+		</li>
+ 
+		<li class="li" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-62FF5913-C913-49A5-B130-401F8970F17B"> Loopbacks (Core AG N_Port to Edge AG F_Port) are not allowed. 
+		</li>
+ 
+		<li class="li" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-1D48ED4D-C24C-42E5-8246-93E6DAAB495C"> The 
+		  <span class="keyword cmdname" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-21CAA9A3-080B-457A-9A17-2AD644269EB9">agshow</span> command issued on the fabric will discover only the Core AG switches. If issued as 
+		  <span class="keyword cmdname" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-D7969691-FDB0-4CBD-80B7-50F350104183">agshow 
+		  </span><span class="ph synph" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-83C453F1-C85F-40EA-BF32-2F27E288C8BB"><span class="keyword kwd">--name</span></span><span class="ph synph" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-9F4713ED-283C-4994-8753-D5F51D6AB13F"><span class="ph var" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-085F6BF5-2F18-468B-8093-2F8FCBFEB7D2"> AG name</span></span>, then the F_Ports of both the Core and Edge AG switches will be shown for the Core AG switch. 
+		</li>
+ 
+		<li class="li" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-9A4B7EA6-3158-4712-936F-377FEBED9A7D"> Due to high subscription ratios that could occur when cascading AGs, ensure there is enough bandwidth for all servers when creating such configurations. The subscription ratio becomes more acute in a virtual environment. 
+		</li>
+ 
+		<li class="li" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__LI_C389A7B6C521434BAD77E873C4BCF84B">Starting with Fabric OS 7.3.0 and later, the registration and de-registration of FDMI devices connected to an AG or cascaded AG is supported, and the 
+		  <span class="keyword cmdname" id="GUID-5C954F5C-A607-4C0D-B7E9-6A9301C0EEC4__GUID-B1FD0146-AD9D-4015-966C-CF5F2299E00C">fdmishow</span> command on AG will display the local FDMI devices connected to the AG. However, remote FDMI devices will not be displayed. 
+		</li>
+ 
+	 </ul>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-09140E3F-EE2F-4608-A5FC-559288E6220E.html">Access Gateway cascading</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

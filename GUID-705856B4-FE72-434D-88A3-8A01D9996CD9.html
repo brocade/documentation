@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Access Gateway mapping" name="DC.Title" /><meta content="port, mapping, ports, port mapping, device mapping, device" name="DC.subject" /><meta content="port, mapping, ports, port mapping, device mapping, device" name="keywords" /><meta content="GUID-EC138615-8D06-42D5-9644-936E8DB23380.html" name="DC.Relation" scheme="URI" /><meta content="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680.html" name="DC.Relation" scheme="URI" /><meta content="GUID-718E488E-D18A-4736-B00E-56E4E6E46CEF.html" name="DC.Relation" scheme="URI" /><meta content="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6.html" name="DC.Relation" scheme="URI" /><meta content="GUID-04BCDFA4-5187-4742-BD80-9372BEAC575B.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Access Gateway mapping</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Access Gateway mapping</h1>
+<div class="body conbody"> 
+	 <p class="p" id="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9__GUID-89202A0E-666E-4571-9E53-8B737114EE17"> When a switch operates in AG mode, you must specify routes that the AG device uses to direct traffic from the devices on its F_Ports to the fabric ports connected to its N_Ports. The routes must be pre-provisioned. The process of pre-provisioning routes in AG mode is called mapping. (By comparison, a switch operating in Native mode determines the best routing path between its F_Ports.) 
+	 </p>
+ 
+	 <p class="p" id="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9__GUID-FF74BBFF-347C-4FED-B543-58A0202DFDB8">You can create two types of maps, port maps and device maps. Port maps are required. Device maps are optional and assign device World Wide Names (WWNs) to N_Ports and N_Port groups. Port mapping and device mapping operate as follows: 
+	 </p>
+ 
+	 <ul class="ul" id="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9__GUID-59A57B90-C0BC-4C6B-8C6D-11CD01C80B4A"> 
+		<li class="li" id="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9__GUID-08BF1123-9D6D-4B22-872E-6EC2B18B5E85"> Port mapping 
+		  <p class="p" id="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9__GUID-61A2874C-784F-43FA-9D6E-760F57C0787B"> Port mapping ensures that all traffic from a specific F_Port always goes through the same N_Port. A single F_Port is mapped to a single N_Port, or to an N_Port group. To map an F_Port to an N_Port group, map the F_Port to an N_Port that belongs to that port group. All F_Ports mapped to an N_Port group are part of that N_Port group. 
+		  </p>
+ 
+		  <p class="p" id="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9__GUID-52A6DE8D-04D9-42E5-ACCD-7685FF9122A0"> 
+		  </p>
+ 
+		</li>
+ 
+		<li class="li" id="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9__GUID-5A31AE40-D697-44D2-9716-9459F4C0FDB1"> Device mapping 
+		  <p class="p" id="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9__GUID-F582DD0A-B619-4A04-A712-5695B6DD67B8"> Device mapping is optional. Port maps must exist before you can create device maps. Device mapping allows a virtual port to access its destination device regardless of the F_Port where the device resides. Device mapping also allows multiple virtual ports on a single physical machine to access multiple destinations residing in different fabrics. 
+		  </p>
+ 
+		  <p class="p" id="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9__GUID-B4AEA3F3-7716-4590-953B-F9F8A3CCC9DF">The preferred method is to map a device WWN to an N_Port group. When a device WWN is mapped to an N_port, and a failover N_port is also specified, the device can reach the fabric through the primary or secondary N_port only. However, when a device WWN is mapped to a port group, it can login to the fabric until the last N_port in the particular port group remains online. 
+		  </p>
+
+		  <p class="p" id="GUID-705856B4-FE72-434D-88A3-8A01D9996CD9__GUID-4DEA1541-E664-4436-A997-FCA50ACC8BDD">You can map a device to multiple groups. Alternatively, you can map a device to a specific N_Port. 
+		  </p>
+ 
+		</li>
+ 
+	 </ul>
+ 
+  </div>
+<div class="related-links"><div class="childlinks"><strong>Next Topic:</strong> <span><span class="link childlink"><a href="GUID-A0FBC416-5517-49FB-913F-50AC6DED3680.html">Port mapping</a><br />
+</span>
+</span>
+</div>
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-EC138615-8D06-42D5-9644-936E8DB23380.html">Configuring Ports in Access Gateway Mode</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

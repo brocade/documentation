@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Allow lists" name="DC.Title" /><meta content="GUID-88C2DDDD-44F5-4025-BE1A-B7B3FA478CB5.html" name="DC.Relation" scheme="URI" /><meta content="GUID-42AE5C61-68DB-478D-85B4-C0376A10B1E6.html" name="DC.Relation" scheme="URI" /><meta content="GUID-06BD043A-0A80-43A0-8E9E-2F5C982C9ECF.html" name="DC.Relation" scheme="URI" /><meta content="GUID-C38E6080-E06E-4FEE-8D87-867B94345FEE.html" name="DC.Relation" scheme="URI" /><meta content="GUID-3EEFC10B-18B5-4F0B-8F50-C24242ACBF35.html" name="DC.Relation" scheme="URI" /><meta content="GUID-64B171C5-0147-420B-90A5-90F0776B6133.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Allow lists</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Allow lists</h1>
+<div class="body conbody"> 
+	 <p class="p" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-BBCA6CC2-A514-47C3-8A3D-DE52221F9210"> You can determine which devices are allowed to log in on a per-F_Port basis by specifying lists of F_Ports and device WWNs in the 
+		<span class="keyword cmdname" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-57065DA4-1DC8-49D1-8487-59E007C6D7F6">ag --adsset 
+		</span> command. The ADS policy must be enabled for this command to succeed.
+	 </p>
+ 
+	 <p class="p" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-80B09CAC-C1B1-4428-A6A5-DBCDC1B651B1"> 
+		<span class="keyword cmdname" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-132EBE4F-68FA-4413-AE33-4FE9463F574F">ag --adsset</span> 
+		<span class="ph synph" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-F8CDCE59-34BF-4CD3-A719-B5FFB8417111"> 
+		  <span class="keyword kwd">&quot;</span> 
+		  <span class="ph var" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-20E8BE7C-2031-4366-8F37-4ABD6EC95FEF">F_Port</span></span> [<span class="ph synph" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-CCD945A6-EFEA-471E-B6D7-7B32AE71D812"> 
+		  <span class="ph var" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-D311FA43-524A-4955-96D8-70F4BDFA9DE9">;F_Port2;...</span> 
+		</span>]<span class="ph synph" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-165BEC30-8DC4-471E-BEBF-F7323D3318B5"><span class="keyword kwd">&quot; &quot;</span></span> 
+		<span class="ph synph" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-E845C8D9-FA9F-4A62-B214-D648925AFAB4"><span class="ph var" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-15324E83-B1A1-427E-9196-433E6BBACC79">WWWN</span> 
+		</span> [<span class="ph synph" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-890BCCF4-2F7C-4E9B-A09F-BF3212CE9400"> 
+		  <span class="ph var" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-36FAF21F-CF9E-4818-B943-E06DBCE323B2">;WWN2;...</span> 
+		</span> ]<span class="keyword">&quot;</span> 
+	 </p>
+ 
+	 <p class="p" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-F484D57E-3FB9-4D37-B917-C39B0DF347D0"> Lists must be enclosed in quotation marks. List members must be separated by semicolons. The maximum number of entries in the allowed device list is twice the per-port maximum login count. 
+	 </p>
+ 
+	 <p class="p" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-DBF37051-8962-4457-A57B-1FFDF62AD5C6"> Use an asterisk (*) instead of port numbers in the F_Port list to add the specified WWNs to all the F_Ports allow lists. Use an asterisk (*) instead of WWNs to indicate access to all devices from the specified F_Port list. A blank WWN list (&quot;&quot;) indicates no access. 
+	 </p>
+ 
+	 <div class="note note" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-BA66C1B2-840A-4EB0-A861-17856E406995"><div class="notetitle">NOTE</div>  Use an asterisk enclosed in quotation marks (&quot;*&quot;) to set the allow list to &quot;all access&quot;; use a pair of double quotation marks (&quot;&quot;) to set the allow list to &quot;no access&quot;. 
+	 </div>
+ 
+	 <p class="p" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-30D350D8-F778-4E40-B861-498AC4B4C3AF"> Note the following characteristics of the allow list:
+	 </p>
+ 
+	 <ul class="ul" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-1C69C637-BEC8-4DC5-B193-27F9D924216E"> 
+		<li class="li" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-2179693C-297E-46CE-B15D-1C3FFD73A5A3"> The maximum number of device entries allowed in the allow list is twice the per-port maximum login count.
+		</li>
+ 
+		<li class="li" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-DA57F5A6-620C-4C68-988B-7EF1EF092E2D"> Each port can be configured to &quot;not allow any device&quot; or &quot;to allow all the devices&quot; to log in.
+		</li>
+ 
+		<li class="li" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-15F4A83E-0566-4056-9F67-92D9A48BA319"> If the ADS policy is enabled, by default, every port is configured to allow all devices to log in.
+		</li>
+ 
+		<li class="li" id="GUID-604CB284-5F68-48BB-A735-CFB0ED92E4EA__GUID-DCB0999C-51CD-4E87-A41C-41FE3F69745A"> The same allow list can be specified for more than one F_Port.
+		</li>
+ 
+	 </ul>
+ 
+  </div>
+<div class="related-links"><div class="childlinks"><strong>Next Topic:</strong> <span><span class="link childlink"><a href="GUID-42AE5C61-68DB-478D-85B4-C0376A10B1E6.html">Setting the list of devices allowed to log in</a><br />
+</span>
+</span>
+</div>
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-88C2DDDD-44F5-4025-BE1A-B7B3FA478CB5.html">Advanced Device Security policy </a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>

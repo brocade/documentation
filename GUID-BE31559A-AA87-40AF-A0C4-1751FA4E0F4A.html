@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US"><head><meta charset="utf-8" /><meta name="viewport" content="width=device-width" /><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta content="(C) Copyright 2005" name="copyright" /><meta content="(C) Copyright 2005" name="DC.rights.owner" /><meta content="concept" name="DC.Type" /><meta content="Displaying device mapping information" name="DC.Title" /><meta content="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6.html" name="DC.Relation" scheme="URI" /><meta content="XHTML" name="DC.Format" /><meta content="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A" name="DC.Identifier" /><meta content="en-US" name="DC.Language" /><title>Displaying device mapping information</title><link href="static/screen.css?N/0tjzkG" rel="stylesheet" /><link href="static/print.css?xKpAPhd3" media="print" rel="stylesheet" /><script src="//assets.adobedtm.com/71cf43077a797f4c4db053ac7405db33e2ae8f96/satelliteLib-8de9725df09b739eae1d01b1f71781037b8776ce.js"></script><script src="static/head.js?qUF72lF0"></script><!-- saved from url=(0014)about:internet -->
+</head><body id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A" data-approot=""><header><a href="index.html" id="logo-link" /><img id="logo" src="static/logo.png" alt="Logo" /></a><h1><p>Access Gateway Administrator&#39;s Guide </p><p>Supporting Fabric OS 7.4.1 </p><p>Part Number: 53-1003937-02 </p></h1><a id="crawler" href="toc_crawler.html"></a></header><section id="center"><article><noscript><p>JavaScript must be enabled in order to use this site.</p><p>Please enable JavaScript in your browser and refresh the page.</p></noscript><div id="thumbnailDialog"></div>
+
+<h1 class="title topictitle1">Displaying device mapping information</h1>
+<div class="body conbody"> 
+	 <p class="p" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-A9E0A7F7-4440-4CE1-BF48-D86596BCD58D"> The 
+		<span class="keyword cmdname" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-617E813F-5D67-4A8F-BA44-490B58A8A8D3">ag 
+		</span> 
+		<span class="ph synph" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-60E336AB-AB8C-4B20-834E-1A4E82E367A0"><span class="keyword kwd">--wwnmapshow</span></span> command displays static and dynamic mapping information about all device WWNs that have been mapped to N_Ports or N_Port groups. For each WWN, this command displays the following: 
+	 </p>
+ 
+	 <ul class="ul" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-A6CD2739-925C-43C5-814E-9EDC9EE044E5"> 
+		<li class="li" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-4A384EA7-F5EF-4EA1-B656-0DABBEF6932E"> WWN - Device WWNs that are mapped to N_Ports 
+		</li>
+ 
+		<li class="li" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-A17BD5FA-156C-4BE9-9DE7-08C25339CF1B"> 1st N_Port - First or primary mapped N_Port (optional) 
+		</li>
+ 
+		<li class="li" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-0173AD2F-94E9-4476-978D-A014EA132020"> 2nd N_Port - Secondary or failover N_Port (optional) 
+		</li>
+ 
+		<li class="li" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-AE854C22-B7C0-4666-BA7F-0981E5E944DC"> PG_ID - Port Group ID where the device is mapped 
+		</li>
+ 
+		<li class="li" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-4F096471-214B-4BDC-8E08-01F438070954"> Current - The N_Port that the device is using (none displays if the device is not logged in) 
+		</li>
+ 
+		<li class="li" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-897AC689-A483-4C4A-9AA4-14655C5DE997"> Enabled - Indicates whether device mapping is enabled or disabled 
+		</li>
+ 
+	 </ul>
+ 
+	 <p class="p" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-7CA890DA-4E37-439E-8112-58AF2D08468D"> Note that new device mappings are only enabled and displayed the next time the device logs in to the switch. 
+	 </p>
+ 
+	 <p class="p" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-6823FC87-68C8-4909-8DFE-405BD65AC41B"> To display device mapping information, use the 
+		<span class="keyword cmdname" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-A4FE6E82-3A7F-47B4-833A-B8B0D270ABEE">ag 
+		</span> 
+		<span class="ph synph" id="GUID-BE31559A-AA87-40AF-A0C4-1751FA4E0F4A__GUID-5C5D7CC7-B825-40D0-9575-BA15B5DC32DD"><span class="keyword kwd">--wwnmapshow</span></span> command. 
+	 </p>
+ 
+  </div>
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Previous Topic:</strong> <a class="link" href="GUID-5196A8F9-6D21-466F-BD63-CABD1A22F1C6.html">Device mapping</a></div>
+</div>
+</div>
+</article><nav id="topnav"><div id="breadcrumbs"></div><div id="topbuttons"><a id="button-feedback" href="http://www.surveygizmo.com/s3/1906046/Feedback?PN=53-1003937-02" title="Feedback" target="_blank"></a><a id="button-download-pdf" href="http://www.brocade.com/content/brocade/en/backend-content/pdf-page.html?/content/dam/common/documents/content-types/administration-guide/fos-741-accessgateway.pdf" title="Download PDF" target="_blank"></a><a id="button-hide-navigation" href="#" title="Hide navigation"><span>Hide navigation</span></a><a id="button-back" href="#" title="Previous topic"><span>Previous topic</span></a><a id="button-forward" href="#" title="Next topic"><span>Next topic</span></a><a id="button-highlighting" href="#" title="Toggle Highlighting"><span>Toggle Highlighting</span></a><a id="button-print" href="#" title="Print"><span>Print</span></a><a id="button-print-all" title="Print All"><span>Print All</span></a><a id="button-email" href="mailto:documentation@brocade.com" title="mailto:documentation@brocade.com"><span>Email Us</span></a></div></nav></section><div id="leftbar"><ul class="tabs"><li class="currentli"><a class="current toc" href="#"><span>Contents</span></a></li><li><a class="index" href="#"><span>Index</span></a></li><li><a class="glossary" href="#"><span>Glossary</span></a></li><li><a class="search" href="#"><span>Search</span></a></li></ul><nav class="toc current"><div class="loader"><img src="static/loader.gif" alt="Loading" /></div></nav><nav class="index"></nav><nav class="glossary"></nav><nav class="search"><div class="results"><span>No search has been performed.</span></div></nav></div><form id="searchform"><input class="search" type="search" placeholder="Search" /><input class="submit" type="submit" value="Go" /></form><script src="static/body.js?vNkL2i4Q"></script><script type="text/javascript">_satellite.pageBottom();</script><script language="JavaScript" type="text/javascript"><!--/* surveygizmo code */-->
+(function(d,e,j,h,f,c,b){d.SurveyGizmoBeacon=f;d[f]=d[f]||function(){(d[f].q=d[f].q||[]).push(arguments)};c=e.createElement(j),b=e.getElementsByTagName(j)[0];c.async=1;c.src=h;b.parentNode.insertBefore(c,b)})(window,document,'script','//d34wpjv4rf3nwa.cloudfront.net/runtimejs/intercept/intercept.js','sg_beacon');sg_beacon('init','MTYyNzA3LTQxQjNDM0VCRTUxQzQyMDY4RTQ4RUNBOTgzRkREQkZE');	</script></body></html>
