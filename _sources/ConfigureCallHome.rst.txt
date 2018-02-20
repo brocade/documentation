@@ -1,0 +1,18 @@
+.. include:: prolog.rst
+
+Configure Call Home
+===================
+
+Call Home notification allows you to configure |product| to automatically send an email alert to a support center to report system problems on specified devices (such as Fabric OS switches, routers, and directors).
+
+#. Click the **Settings** icon ( |SettingsIcon| ), and then select **Network Monitoring > Call Home**.
+
+#. Click the name of Call Home center you want to configure.
+
+#. In the Call Home center drill-down page, click **Add** and **Remove** to add or remove devices. Click **Configure** to add or remove event filters from selected devices.
+
+   .. image:: graphics/Spectre-CallHomeDrillDown.png
+
+#. Select the **Enable** checkbox to enable the Call Home center.
+
+#. Click **Save**.

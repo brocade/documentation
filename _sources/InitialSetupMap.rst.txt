@@ -1,0 +1,10 @@
+.. include:: prolog.rst
+
+Initial Setup and Configuration
+-----------------------------------------
+
+.. toctree::
+   
+   DiscoveringAFabric
+   ConfigureServiceNotifications
+   ConfigureCallHome

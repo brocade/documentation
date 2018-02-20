@@ -1,0 +1,19 @@
+.. include:: prolog.rst
+
+Tagging Overview
+================
+
+Although your network can contain thousands of objects (ports, switches, fabrics), sometimes you might want to monitor and manage just a small subset of these objects, based on common characteristics.
+
+For example, you might want to do the following:
+   * Show a topology with only storage-facing ports.
+   * Generate an inventory or health status report for all device-attached ports.
+   * View events that originated from switches in rack 1 and rack 2 in the data center.
+   
+To organize your network into groups that share similar characteristics, |product| provides collections, tags, and filters.
+
+For more information, refer to :ref:`Overview-label`.
+You can also refer to :ref:`BulkEdit-label`.
+
+For a demonstration of how to select the bulk edit option, see :ref:`FigBulkEdit-label`.
+

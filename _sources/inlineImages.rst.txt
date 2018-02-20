@@ -1,0 +1,4 @@
+.. |AddButton| image:: graphics/Spectre-AddButton.png
+.. |InventoryIcon| image:: graphics/Spectre-InventoryIcon.png
+.. |MoreButton| image:: graphics/Spectre-MoreButton.png
+.. |SettingsIcon| image:: graphics/Spectre-SettingsIcon.png

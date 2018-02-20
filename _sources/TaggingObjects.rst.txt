@@ -1,0 +1,42 @@
+.. include:: prolog.rst
+
+Tagging Objects
+===============
+
+#. Click the **Inventory** icon ( |InventoryIcon| ).
+
+#. Select the entity you want to tag from the drop-down list.
+
+   .. image:: graphics/Spectre-InventoryDropDownSelector.png
+
+   The Inventory page displays the managed entity objects.
+
+   .. note:: The following steps show how to apply tags to one or more objects at the same time. Alternatively, if you want to tag a single object, you can click the name in the Inventory page and edit the tags in the drill-down page for that object.
+
+#. Click the **More** button ( |MoreButton| ) in the upper right corner of the page, and then select **Bulk Edit**.
+
+   .. image:: graphics/Spectre-BulkEdit.png
+
+   A column of checkboxes displays to the left of the names.
+
+#. Select one or more objects to tag.
+
+#. Click **Edit** in the upper right corner of the page, and then select **Edit Tags**. 
+
+   .. image:: graphics/Spectre-EditTags.png
+   
+#. In the **Edit Tags** dialog box, enter the tags you want to add and remove for the selected objects.
+
+   Enter the tags as a comma-separated list with no spaces. A tag can be up to 64 characters long. Tags are case-sensitive and can include alphanumeric characters and the underscore ( _ ).
+
+   If you want to modify an existing tag, you must remove it and add the new tag, which you can do at the same time.
+
+   In the following screenshot, the tag "DC1" is added to the selected objects. Additionally, a previous tag was misspelled, so the misspelled tag ("Raack1" is removed and replaced with the correct tag ("Rack1").
+
+   .. image:: graphics/Spectre-EditTagsDialog.png
+   
+#. Click **Ok**.
+
+The Inventory page displays the updated tags.
+
+.. image:: graphics/Spectre-InventorySwitchTags.png

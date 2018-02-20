@@ -1,0 +1,164 @@
+
+
+<!doctype html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Discovery Overview &#8212; Spectre 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/bizstyle.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/bizstyle.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Stopping Switch Monitoring" href="StoppingSwitchMonitoring.html" />
+    <link rel="prev" title="Discovery" href="DiscoveryMap.html" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="_static/css3-mediaqueries.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="StoppingSwitchMonitoring.html" title="Stopping Switch Monitoring"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="DiscoveryMap.html" title="Discovery"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Spectre 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="DiscoveryMap.html" accesskey="U">Discovery</a> &#187;</li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="index.html">Table Of Contents</a></h3>
+<p class="caption"><span class="caption-text">Getting Started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="SpectreOverview.html">Spectre Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="InitialSetupMap.html">Initial Setup and Configuration</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Configuration:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="DiscoveryMap.html">Discovery</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Discovery Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#seed-switch">Seed Switch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#discovery-prerequisites">Discovery Prerequisites</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="DiscoveringAFabric.html">Discovering a Fabric</a></li>
+<li class="toctree-l2"><a class="reference internal" href="StoppingSwitchMonitoring.html">Stopping Switch Monitoring</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="TaggingMap.html">Efficient Searches Using Tags</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Security:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="UserMgmtMap.html">User Management</a></li>
+</ul>
+
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="discovery-overview">
+<h1>Discovery Overview<a class="headerlink" href="#discovery-overview" title="Permalink to this headline">¶</a></h1>
+<p>Discovery is the process by which Spectre contacts the devices in your SAN. Before you can monitor and manage a fabric, you must first discover it.</p>
+<p>For FC-FC routing, you must discover both the backbone fabric and the edge fabrics. The backbone fabric cannot be used to discover and manage the edge fabrics, and the edge fabrics cannot discover and manage the backbone fabric.</p>
+<dl class="docutils">
+<dt>When you discover a fabric, monitoring is automatically enabled on the fabric and on all switches in the fabric. When monitoring is enabled, the following occurs:</dt>
+<dd><ul class="first last simple">
+<li>Data collection happens periodically at an interval that depends on the size of the SAN.</li>
+<li>Spectre interface displays are updated with the latest fabric and switch information.</li>
+<li>You receive events and SNMP traps from the fabric and switches.</li>
+</ul>
+</dd>
+</dl>
+<div class="section" id="seed-switch">
+<h2>Seed Switch<a class="headerlink" href="#seed-switch" title="Permalink to this headline">¶</a></h2>
+<p>A <em>seed switch</em> is the switch that you use to discover the fabric. During fabric discovery, you provide the IP address and credentials of a switch in the fabric. This switch then becomes the seed switch. After discovering the fabric, you can change the seed switch.</p>
+<dl class="docutils">
+<dt>The seed switch is not the same as the principal switch.</dt>
+<dd><ul class="first last simple">
+<li>The <em>seed switch</em> collects all fabric-wide data, such as fabric membership, connectivity, name server information, and zoning information. You select the seed switch when you discover the fabric.</li>
+<li>The <em>principal switch</em> maintains time and manages domain ID assignment for the fabric. The principal switch, is automatically elected when the fabric is formed.</li>
+</ul>
+</dd>
+</dl>
+<p>If a switch running in Access Gateway mode is used as the seed switch, the switch is discovered as a standalone fabric. Other switches and end devices in the fabric are not discovered. To discover the entire fabric, select a switch other than the Access Gateway switch to be the seed switch.</p>
+<p>The Brocade Analytics Monitoring Platform cannot be used as a seed switch.</p>
+</div>
+<div class="section" id="discovery-prerequisites">
+<h2>Discovery Prerequisites<a class="headerlink" href="#discovery-prerequisites" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Before you can discover a fabric, the following prerequisites must be met:</dt>
+<dd><ul class="first last simple">
+<li>All switches in the fabric must be running Fabric OS 7.4.0 or higher.</li>
+<li>The seed switch must be reachable from the Spectre server using the Internet Control Message Protocol (ICMP), that is, using <strong>ping</strong>.</li>
+<li>If a Fabric Configuration Server (FCS) policy is enabled, the seed switch must be a primary FCS.</li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="StoppingSwitchMonitoring.html" title="Stopping Switch Monitoring"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="DiscoveryMap.html" title="Discovery"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Spectre 1.0 documentation</a> &#187;</li>
+          <li class="nav-item nav-item-1"><a href="DiscoveryMap.html" >Discovery</a> &#187;</li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2018, Brocade Communications Systems LLC..
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.6.5.
+    </div>
+  </body>
+</html>
