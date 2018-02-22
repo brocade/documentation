@@ -1,7 +1,0 @@
-Efficient Searches Using Tags
------------------------------
-
-.. toctree::
-   
-   TaggingOverview
-   TaggingObjects

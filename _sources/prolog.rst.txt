@@ -1,2 +1,0 @@
-.. include:: variables.rst
-.. include:: inlineImages.rst

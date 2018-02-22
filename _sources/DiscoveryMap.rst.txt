@@ -1,8 +1,0 @@
-Discovery
----------
-
-.. toctree::
-   
-   DiscoveryOverview
-   DiscoveringAFabric
-   StoppingSwitchMonitoring

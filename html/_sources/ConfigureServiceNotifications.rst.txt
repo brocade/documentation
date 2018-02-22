@@ -1,9 +1,0 @@
-Configure Service Notifications
-===============================
-
-This section describes how you can configure the following:
-
-  * Configure call home
-  * Configure the SMTP mail server
-  * Register the server as a syslog and SNMP trap recipient
-  * Forward syslog messages and SNMP traps
