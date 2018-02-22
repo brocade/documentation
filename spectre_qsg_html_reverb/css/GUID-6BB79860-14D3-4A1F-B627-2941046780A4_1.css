@@ -1,0 +1,382 @@
+div.Title, caption.Title
+{
+  color: #17365D;
+  font-family: Arial;
+  font-size: 18pt;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Body, caption.Body
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Child_Topics_Link_Pool_Open, caption.Child_Topics_Link_Pool_Open
+{
+  border-top-color: black;
+  border-top-style: solid;
+  border-top-width: 2pt;
+  font-family: Arial;
+  font-size: 0;
+  font-weight: bold;
+  margin-bottom: 1pt;
+  margin-top: 1pt;
+}
+
+div.Child_Topics_Link_Pool_Close, caption.Child_Topics_Link_Pool_Close
+{
+  border-bottom-color: black;
+  border-bottom-style: solid;
+  border-bottom-width: 2pt;
+  font-family: Arial;
+  font-size: 0;
+  font-weight: bold;
+  margin-bottom: 1pt;
+  margin-top: 1pt;
+}
+
+div.Child_Topic, caption.Child_Topic
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-left: 18pt;
+}
+
+div.Heading_1, caption.Heading_1
+{
+  color: #365F91;
+  font-family: Arial;
+  font-size: 14pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Short_Description, caption.Short_Description
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Section, caption.Section
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Section_Title, caption.Section_Title
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Note, caption.Note
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.attention, caption.attention
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.caution, caption.caution
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.danger, caption.danger
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Table_Cell_Head, caption.Table_Cell_Head
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 4pt;
+  margin-top: 4pt;
+}
+
+div.Table_Cell, caption.Table_Cell
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 4pt;
+  margin-top: 4pt;
+}
+
+div.Parent_Topics_Link_Pool_Open, caption.Parent_Topics_Link_Pool_Open
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+}
+
+div.Parent_Topic, caption.Parent_Topic
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-left: 18pt;
+}
+
+div.List_1, caption.List_1
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-left: 18pt;
+  margin-top: 6pt;
+  text-indent: -18pt;
+}
+
+div.keep-with-next, caption.keep-with-next
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.List_1_Continued, caption.List_1_Continued
+{
+  font-family: Arial;
+  margin-left: 18pt;
+}
+
+div.Context, caption.Context
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Prerequisite, caption.Prerequisite
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Step_1, caption.Step_1
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 3pt;
+  margin-left: 18pt;
+  margin-top: 3pt;
+  text-indent: -18pt;
+}
+
+div.Step_1_Continued, caption.Step_1_Continued
+{
+  font-family: Arial;
+  margin-left: 18pt;
+}
+
+div.Step_Example_1, caption.Step_Example_1
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-left: 18pt;
+  margin-top: 6pt;
+}
+
+div.Step_Info_1, caption.Step_Info_1
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-left: 18pt;
+  margin-top: 6pt;
+}
+
+div.Step_Result_1, caption.Step_Result_1
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-left: 18pt;
+  margin-top: 6pt;
+}
+
+div.Example, caption.Example
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Postrequisite, caption.Postrequisite
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Figure, caption.Figure
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Figure_Title, caption.Figure_Title
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Numbered_1, caption.Numbered_1
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 3pt;
+  margin-left: 18pt;
+  margin-top: 3pt;
+  text-indent: -18pt;
+}
+
+div.Figure_1, caption.Figure_1
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-left: 18pt;
+  margin-top: 6pt;
+}
+
+div.Figure_Title_1, caption.Figure_Title_1
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-left: 18pt;
+  margin-top: 6pt;
+}
+
+div.Step_optional_1, caption.Step_optional_1
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 3pt;
+  margin-left: 18pt;
+  margin-top: 3pt;
+  text-indent: -18pt;
+}
+
+div.Step_optional_1_Continued, caption.Step_optional_1_Continued
+{
+  font-family: Arial;
+  margin-left: 18pt;
+}
+
+div.Body_1, caption.Body_1
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 6pt;
+  margin-left: 18pt;
+  margin-top: 6pt;
+}
+
+div.Substep_2, caption.Substep_2
+{
+  font-family: Arial;
+  font-size: 12pt;
+  margin-bottom: 3pt;
+  margin-left: 36pt;
+  margin-top: 3pt;
+  text-indent: -18pt;
+}
+
+div.Result, caption.Result
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Heading_2, caption.Heading_2
+{
+  color: #4F91BD;
+  font-family: Arial;
+  font-size: 13pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+div.Preformatted_1, caption.Preformatted_1
+{
+  font-family: Arial;
+  font-size: 11pt;
+  margin-left: 18pt;
+  white-space: pre;
+}
+
+div.Table_Title, caption.Table_Title
+{
+  font-family: Arial;
+  font-size: 12pt;
+  font-weight: bold;
+  margin-bottom: 6pt;
+  margin-top: 6pt;
+}
+
+span.Bold, abbreviation.Bold, acronym.Bold, citation.Bold
+{
+  font-weight: bold;
+}
+
+span.Italic, abbreviation.Italic, acronym.Italic, citation.Italic
+{
+  font-style: italic;
+}
+
